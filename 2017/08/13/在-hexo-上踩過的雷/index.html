@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        
+        在 hexo 上踩過的雷｜undefined
         
     </title>
 
-    <link rel="canonical" href="https://khiav223577.github.io/blog/blog/archives/">
+    <link rel="canonical" href="https://khiav223577.github.io/blog/blog/2017/08/13/在-hexo-上踩過的雷/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/blog/css/bootstrap.min.css">
@@ -43,7 +43,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
 " data-ishome = "false" >
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -115,87 +115,121 @@
 </script>
 
 <!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="">
+
+
 <style>
-    .intro-header .site-heading {
-        margin: 50px;
-    }
     
     header.intro-header {
         background-image: url('')
     }
+
     
 </style>
 
-<!-- Page Header -->
 <header class="intro-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading text-center">
-                    <h1>archives</h1>
-                    <span class="subheading"></span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>在 hexo 上踩過的雷</h1>
+                    
+                    <span class="meta">
+                         作者 狼
+                        <span>
+                          日期 2017-08-13
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="post-title-haojen">
+        <span>
+            在 hexo 上踩過的雷
+        </span>
+    </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- archive list -->
-            
-				
-				
-				
-					
-					
-					<div class="archive archive-year" data-date="2017">
-						<h2 class="archive-title">
-						<span class="fa fa-archive">
-							<a href="/blog/archives/2017">2017</a>
-						</span>
-						</h2>
-				
-				
-					
-					
-					<div class="archive archive-month" data-date="201708">
-						<h3 class="archive-title">
-							<a href="/blog/archives/2017/08">08</a>
-						</h3>
-				
-				<div class="one-tag-list">
-                <div class="post-preview">
-                    <a href="/blog/2017/08/13/在-hexo-上踩過的雷/">
-                        <h4 class="post-title">
-                            在 hexo 上踩過的雷
-                        </h4>
-                        
-                    </a>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h1 id="部署到-github-後頁面未更新"><a href="#部署到-github-後頁面未更新" class="headerlink" title="部署到 github 後頁面未更新"></a>部署到 github 後頁面未更新</h1><p>本機測試都正常，也成功部署到 github 上了，網頁卻遲遲沒有更新<br>拜讀 stackoverflow 上的這篇 <a href="https://stackoverflow.com/questions/20422279/github-pages-are-not-updating" target="_blank" rel="external">Github Page not updating</a> 後，發現 github 的 setting 頁有顯示錯誤訊息：</p>
+<blockquote>
+<p>Your site is having problems building: The tag fancybox on line 77 in themes/landscape/README.md is not a recognized Liquid tag. For more information, see <a href="https://help.github.com/articles/page-build-failed-unknown-tag-error/" target="_blank" rel="external">https://help.github.com/articles/page-build-failed-unknown-tag-error/</a>.</p>
+</blockquote>
+<p>原因是因為預設的 <code>landscape</code> 主題內的<code>README.md</code>有 github 不支援的語法。手動註解那一行，或把那個檔案刪除即可。</p>
+<h1 id="部署完路徑多一層-public"><a href="#部署完路徑多一層-public" class="headerlink" title="部署完路徑多一層 public"></a>部署完路徑多一層 public</h1><p>路徑變為 <code>https://khiav223577.github.io/blog/public</code><br>發生原因不明。解決方法：</p>
+<ol>
+<li>刪除遠端 <code>gh-pages</code> branch</li>
+<li>刪除本機 <code>.deploy_git</code> 資料夾</li>
+<li>再重新部署一次即可。</li>
+</ol>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/blog/2017/08/13/hello-world/" data-toggle="tooltip" data-placement="top"
+                           title="Hello World">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#部署到-github-後頁面未更新"><span class="toc-text">部署到 github 後頁面未更新</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署完路徑多一層-public"><span class="toc-text">部署完路徑多一層 public</span></a></li></ol>
                 </div>
-				<hr>
-				</div>
-            
-				
-				
-				
-				
-				<div class="one-tag-list">
-                <div class="post-preview">
-                    <a href="/blog/2017/08/13/hello-world/">
-                        <h4 class="post-title">
-                            Hello World
-                        </h4>
-                        
-                    </a>
-                </div>
-				<hr>
-				</div>
-            
+            </div>
         </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
     </div>
+</article>
+
+
+
+
+
+
 
 <!-- Footer -->
 <!-- Footer -->
