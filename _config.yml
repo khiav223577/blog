@@ -80,6 +80,7 @@ archive:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
+  local_dir: public
   repo: https://github.com/khiav223577/blog.git
   branch: gh-pages
   #extend_dirs: blog
