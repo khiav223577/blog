@@ -84,3 +84,6 @@ deploy:
   repo: https://github.com/khiav223577/blog.git
   branch: gh-pages
   #extend_dirs: blog
+
+ga_track_id: 'UA-89612344-1'            # Format: UA-xxxxxx-xx
+ga_domain: auto
