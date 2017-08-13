@@ -88,4 +88,4 @@ deploy:
 ga_track_id: 'UA-89612344-1'            # Format: UA-xxxxxx-xx
 ga_domain: auto
 
-favicon: imgs/wolf.ico
+favicon: /blog/imgs/wolf.ico
