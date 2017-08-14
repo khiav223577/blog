@@ -86,7 +86,7 @@
                         
 							
                         <li>
-                            <a href="/blog/tags/">Tags</a>
+                            <a href="/blog/archive/">Archive</a>
                         </li>
 							
 						
@@ -94,7 +94,7 @@
                         
 							
                         <li>
-                            <a href="/blog/archive/">Archive</a>
+                            <a href="/blog/tags/">Tags</a>
                         </li>
 							
 						
@@ -248,7 +248,7 @@
 <h2>連不到標籤頁 <code>blog/Tags</code></h2>
 <p>原因：預設是小寫的網址，大小寫有差。但生成頁面時若打大寫 <code>hexo new page Tags</code>，則就只能用大寫網址進入。</p>
 <p>解決方式：想辦法將 <code>gh-pages</code> branch 中大寫 <code>Tags</code> 資料夾改成小寫的。因為 git 預設是不分大小寫，所以...要自己想辦法。
-有個指令可以讓 git 會去分大小寫，如下：
+有個指令可以讓 git 會去分大小寫：
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">git config core.ignorecase false</div></pre></td></tr></table></figure></p>
 <p>但 git 對大小寫支援並不好，中間可能會遇到各種奇葩問題，然後又會遇到 deploy 時被蓋掉的問題XD 🐛🐛
 總之大概有幾點要做：</p>
@@ -257,8 +257,9 @@
 <li>開啟區分大小寫後，將 <code>Tags</code> 改成 小寫 <code>tags</code>，commit 上去就是了</li>
 <li>commit 後遠端可能會不知原因同時存在二個資料夾，但本機又無任何 file changes。此時要在本機將資料夾下所有東西都刪除（或搬移），git status 會看到 <code>Tags</code>, <code>tags</code>都被刪了，這時候才能 add <code>Tags</code>，接著 commit 並 push 後就可以把遠端的大寫 <code>Tags</code> 資料夾刪除XD</li>
 </ul>
-<h2>Hello World 頁突然會成最新文章</h2>
-<p>原因：這是內建生成的頁面，缺少了 <code>date</code> 屬性，補上即可。但觸發這個 BUG 使 hello world 變成新文章的原因未知。</p>
+<h2>Hello World 頁突然變成最新文章</h2>
+<p>因為這是內建生成的頁面，缺少了 <code>date</code> 屬性，補上即可。</p>
+<p>但觸發這個 BUG 使 hello world 變成新文章的原因未知。</p>
 
                 <hr>
                 
@@ -289,7 +290,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">部署到 github 後頁面未更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">部署完路徑多一層 public</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">有些主題缺乏一些功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">樣式的改動本機有更新，但部署後沒有</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">無法 git push，一直叫你要 pull</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">連不到標籤頁 blog/Tags</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Hello World 頁突然會成最新文章</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">部署到 github 後頁面未更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">部署完路徑多一層 public</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">有些主題缺乏一些功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">樣式的改動本機有更新，但部署後沒有</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">無法 git push，一直叫你要 pull</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">連不到標籤頁 blog/Tags</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Hello World 頁突然變成最新文章</span></a></li></ol>
                 </div>
             </div>
         </div>
