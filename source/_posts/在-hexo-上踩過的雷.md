@@ -27,4 +27,4 @@ tags:
 - `list_archives` 歷史文章依日期分類
 
 # 樣式的改動本機有更新，但部署後沒有
-要輸入 `hexo clean` 指令清空所有檔案，再 `hexo g` 重新打包後，css 才會是最新的。
+輸入 `hexo clean` 指令清空所有檔案，再 `hexo g` 重新打包後，css 才會是最新的。
