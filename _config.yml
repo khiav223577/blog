@@ -121,8 +121,21 @@ friends:
   - href: https://www.pagamo.org/
     title: PaGamO
 
-# search api
+# --------------------------------------------
+# Search
+# --------------------------------------------
 swiftype_key: AeQzrVS58KwTaGUqXGwY
+
+algolia:
+  appId: "XDG1C6ASA4"
+  apiKey: "eebdd0f1174b77269d954813961815bc"
+  chunkSize: 5000
+  indexName: "khiav-hexo-blog"
+  fields:
+    - title
+    - tags
+    - content
+    - path
 
 
 
