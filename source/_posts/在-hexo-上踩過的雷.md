@@ -44,5 +44,5 @@ git branch --set-upstream-to=origin/master
 ```
 git config core.ignorecase false
 ```
-但 git 對大小寫支援並不好，中間可能會遇到各種奇葩問題XD :bug::bug:
+但 git 對大小寫支援並不好，中間可能會遇到各種奇葩問題，然後又會遇到 deploy 時又被蓋掉的問題XD :bug::bug:
 
