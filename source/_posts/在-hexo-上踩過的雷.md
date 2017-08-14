@@ -46,3 +46,6 @@ git config core.ignorecase false
 ```
 但 git 對大小寫支援並不好，中間可能會遇到各種奇葩問題，然後又會遇到 deploy 時又被蓋掉的問題XD :bug::bug:
 
+## Hello World 頁突然會成最新文章
+原因：這是內建生成的頁面，缺少了 `date` 屬性，補上即可。但觸發這個 BUG 使 hello world 變成新文章的原因未知。
+
