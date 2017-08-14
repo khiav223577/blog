@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        狼&#39;s Blog
+        hexo 上實現搜尋功能（上）｜狼&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="https://khiav223577.github.io/blog/blog/archives/">
+    <link rel="canonical" href="https://khiav223577.github.io/blog/blog/2017/08/15/hexo-上實現搜尋功能（上）/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/blog/css/bootstrap.min.css">
@@ -49,7 +49,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
 " data-ishome = "false" >
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -163,104 +163,164 @@
 
 
 <!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="https://user-images.githubusercontent.com/4011729/29259059-b329fcac-80f1-11e7-9352-b03425360215.jpg">
+
+
 <style>
-    .intro-header .site-heading {
-        margin: 50px;
-    }
     
     header.intro-header {
         background-image: url('https://user-images.githubusercontent.com/4011729/29259059-b329fcac-80f1-11e7-9352-b03425360215.jpg')
     }
+
     
 </style>
 
-<!-- Page Header -->
 <header class="intro-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading text-center">
-                    <h1>archives</h1>
-                    <span class="subheading"></span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>hexo 上實現搜尋功能（上）</h1>
+                    
+                    <span class="meta">
+                         作者 狼
+                        <span>
+                          日期 2017-08-15
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/blog/tags/#Hexo"
+                           title="Hexo">Hexo</a>
+                        
+                        <a class="tag" href="/blog/tags/#Algolia"
+                           title="Algolia">Algolia</a>
+                        
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="post-title-haojen">
+        <span>
+            hexo 上實現搜尋功能（上）
+        </span>
+    </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- archive list -->
-            
-				
-				
-				
-					
-					
-					<div class="archive archive-year" data-date="2017">
-						<h2 class="archive-title">
-						<span class="fa fa-archive">
-							<a href="/blog/archives/2017">2017</a>
-						</span>
-						</h2>
-				
-				
-					
-					
-					<div class="archive archive-month" data-date="201708">
-						<h3 class="archive-title">
-							<a href="/blog/archives/2017/08">8月</a>
-						</h3>
-				
-				<div class="one-tag-list">
-                <div class="post-preview">
-                    <a href="/blog/2017/08/15/hexo-上實現搜尋功能（上）/">
-                        <h4 class="post-title">
-                            hexo 上實現搜尋功能（上）
-                        </h4>
-                        
-                    </a>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h2>前言</h2>
+<p>hexo 原生是沒有搜尋功能的，但有些主題會提供搜尋功能，主要分成二種。一種是裝 npm 套件，在打包時先生成索引檔（可能是 <code>JSON</code>, <code>XML</code> 格式），再引入 js 檔自行實作搜尋的功能。另一種則是依賴外部服務，例如<code>Swiftype</code>、<code>Algolia</code>、<code>Azure</code>。在搜尋時發送請求給外部服務，由外部服務回傳搜尋結果。在這裡就不討論好壞了，直接說明我怎麼實現的吧XD</p>
+<h2>Swiftype</h2>
+<p>這個是我使用的主題 <a href="https://github.com/Haojen/hexo-theme-Anisina" target="_blank" rel="external">Anisina</a> 內建提供的功能，在 <code>_config.yml</code> 內加上一句即可：
+<figure class="highlight yml"><table><tr><td class="code"><pre><div class="line"><span class="attr">swiftype_key:</span> <span class="string">your_application_key</span></div></pre></td></tr></table></figure></p>
+<p>假如以前沒有用過 <a href="https://swiftype.com/" target="_blank" rel="external">Swiftype</a> 的話，要先去註冊一個帳號（PS：限制只能用公司 Email，不能用 Gmail）
+註冊完會有 14 天的 <code>Free Trial</code>，但它沒有免費方案，而且超貴，最便宜的也要 <code>299/mo</code>，不知道是指美金嗎＝＝。不過<a href="http://www.jerryfu.net/post/search-engine-for-hexo-with-swiftype-v2.html" target="_blank" rel="external">聽說</a>免費試用到了後，會給你一個選擇降級成免費帳號（？）</p>
+<p>註冊完之後，點選 <code>Create Engine</code>，綁上部落格的網址後，它的爬蟲就會來你的網站爬資料、建立索引。只不過爬的速度有點慢，等了一整天還沒爬完，一直停留在 <code>Crawling</code> 步驟，如下圖：
+<img src="https://user-images.githubusercontent.com/4011729/29283635-27d45c4c-815a-11e7-9416-281db6c5b2f0.png" alt="crawling forever">
+網路上也沒有人反應有發生過這種狀況，是我太心急嗎XD。總之不管它，等它好了再來更新這篇。等待的時間就改串接別的服務吧。</p>
+<h2>Algolia</h2>
+<p>在 hexo 的套件庫挖到 <a href="https://github.com/LouisBarranqueiro/hexo-algoliasearch" target="_blank" rel="external">hexo-algoliasearch</a> 才知道有這項服務XD。照著 github 上的指示裝好後，編輯 <code>_config.yml</code>，加上：（P.S. 還有另一個比較新的套件 <a href="https://github.com/oncletom/hexo-algolia" target="_blank" rel="external">hexo-algolia</a> 跟這個很像）
+<figure class="highlight yml"><table><tr><td class="code"><pre><div class="line"><span class="attr">algolia:</span></div><div class="line"><span class="attr">  appId:</span> <span class="string">"xxxxxxxxxx"</span></div><div class="line"><span class="attr">  apiKey:</span> <span class="string">"xxxxxxxxxxxxxxxxxxxxxxxx"</span></div><div class="line"><span class="attr">  adminApiKey:</span> <span class="string">"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span></div><div class="line"><span class="attr">  chunkSize:</span> <span class="number">5000</span></div><div class="line"><span class="attr">  indexName:</span> <span class="string">"my-hexo-blog"</span></div><div class="line"><span class="attr">  fields:</span></div><div class="line"><span class="bullet">    -</span> <span class="string">title</span></div><div class="line"><span class="bullet">    -</span> <span class="string">tags</span></div><div class="line"><span class="bullet">    -</span> <span class="string">raw</span></div><div class="line"><span class="bullet">    -</span> <span class="string">path</span></div></pre></td></tr></table></figure></p>
+<p>同樣地，也是要去 <a href="https://www.algolia.com/" target="_blank" rel="external">Algolia</a> 註冊並創建你的 <code>APPs</code>，再回來填入你的 key（在後臺 <code>API Keys</code>分頁內）。這個服務有免費方案，可以安心使用。💥  <strong>這邊要注意的是 <code>adminApiKey</code> 不要 commit 到 github 上XD</strong>。套件有支援將 key 設定在環境變數內，但設在環境變數內其實也蠻危險的。最好的方式是分離設定檔，並加到 <code>.gitignore</code> 內，不過這就得等善心人事幫那個套件發 PR了～🌟
+<img src="https://user-images.githubusercontent.com/4011729/29285221-577630c8-8160-11e7-8ccc-eb08c8e3f208.png" alt="algolia console">
+設好後，輸入 <code>hexo algolia</code> 即可自動生成索引檔，並傳到 Algolia 上。假如失敗的話輸入 <code>hexo clean</code>清空資料後，再試一次。成功的話，在後臺 <code>Indices</code> 頁中就能看到你文章的索引資料。😄</p>
+<blockquote>
+<p>若想要自訂索引資料的話，可自行修改 yml 內的 <code>fields</code>。</p>
+<p>不知道如何設定的話，可以參考這篇文件：<a href="https://hexo.io/zh-tw/docs/variables.html" target="_blank" rel="external">Hexo 變數</a> 👀</p>
+</blockquote>
+<h2>未完待續...</h2>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/blog/2017/08/13/在-hexo-上踩過的雷/" data-toggle="tooltip" data-placement="top"
+                           title="在 hexo 上踩過的雷">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Swiftype</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Algolia</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">未完待續...</span></a></li></ol>
                 </div>
-				<hr>
-				</div>
-            
-				
-				
-				
-				
-				<div class="one-tag-list">
-                <div class="post-preview">
-                    <a href="/blog/2017/08/13/在-hexo-上踩過的雷/">
-                        <h4 class="post-title">
-                            在 hexo 上踩過的雷
-                        </h4>
-                        
-                    </a>
-                </div>
-				<hr>
-				</div>
-            
-				
-				
-				
-				
-				<div class="one-tag-list">
-                <div class="post-preview">
-                    <a href="/blog/2017/08/13/hello-world/">
-                        <h4 class="post-title">
-                            Hello World
-                        </h4>
-                        
-                    </a>
-                </div>
-				<hr>
-				</div>
-            
+            </div>
         </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/blog/tags/">標籤雲</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/blog/tags/#Hexo"
+                           title="Hexo">Hexo</a>
+                        
+                        <a class="tag" href="/blog/tags/#Algolia"
+                           title="Algolia">Algolia</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">友情連結</h5>
+                    <ul class="list-inline text-center">
+                        
+                        <li><a href="https://sites.google.com/site/echoourvoice/">回音官網</a></li>
+                        
+                        <li><a href="https://www.pagamo.org/">PaGamO</a></li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+
     </div>
-    </div>
+</article>
+
+
+
+
+
+
 
 <!-- Footer -->
 <!-- Footer -->
