@@ -129,6 +129,7 @@ friends:
 algolia:
   appId: "XDG1C6ASA4"
   apiKey: "eebdd0f1174b77269d954813961815bc"
+  adminApiKey: "3bf0fe8506a00c5758fc627ebd378f69"
   chunkSize: 5000
   indexName: "khiav-hexo-blog"
   fields:
