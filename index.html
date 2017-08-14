@@ -32,6 +32,12 @@
 
     <!-- Pygments Github CSS -->
     <link rel="stylesheet" href="/blog/css/syntax.css">
+
+    <link rel="stylesheet" href="/blog/css/algolia.css">
+    <script src="/blog/js/algolia.js"></script>
+    <script src="/blog/js/instantsearch.min.js"></script>
+
+    <script src="/blog/js/lodash.min.js"></script>
 </head>
 
 <style>
@@ -80,6 +86,14 @@
                         
 							
                         <li>
+                            <a href="/blog/archive/">Archive</a>
+                        </li>
+							
+						
+                    
+                        
+							
+                        <li>
                             <a href="/blog/Tags/">Tags</a>
                         </li>
 							
@@ -87,6 +101,13 @@
                     
 					
 					
+                
+                  <li>
+                    <a href="#search" class="popup-trigger">
+                      <i class="fa fa-search"></i>
+                    </a>
+                  </li>
+                
                 </ul>
             </div>
         </div>
@@ -121,6 +142,25 @@
         }
     }
 </script>
+<div class="site-search">
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+</div>
+
 
 <!-- Main Content -->
 
@@ -402,12 +442,6 @@ Your site is havi..
           
           
           
-            <section style="text-align: center;">
-              <input type="text" class="st-default-search-input" style="width: 140px; margin: 0 0 10px 0;">
-            </section>
-          
-          
-          
             <section>
               <hr>
               <h5 style="text-align: center;">友情連結</h5>
@@ -574,15 +608,7 @@ Your site is havi..
 <!-- Baidu Tongji -->
 
 
-<!-- swiftype -->
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-  _st('install','AeQzrVS58KwTaGUqXGwY','2.0.0');
-</script>
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
