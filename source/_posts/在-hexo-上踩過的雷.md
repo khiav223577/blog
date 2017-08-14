@@ -44,7 +44,11 @@ git branch --set-upstream-to=origin/master
 ```
 git config core.ignorecase false
 ```
-但 git 對大小寫支援並不好，中間可能會遇到各種奇葩問題，然後又會遇到 deploy 時又被蓋掉的問題XD :bug::bug:
+但 git 對大小寫支援並不好，中間可能會遇到各種奇葩問題，然後又會遇到 deploy 時被蓋掉的問題XD :bug::bug:
+總之大概有幾點要做：
+ - 要去隱藏資料夾 `.deploy_git/` 內改動才有效
+ - 開啟區分大小寫後，將 `Tags` 改成 小寫 `tags`，commit 上去就是了
+ - commit 後遠端可能會不知原因同時存在二個資料夾，但本機又無任何 file changes。此時要在本機將資料夾下所有東西都刪除（或搬移），git status 會看到 `Tags`, `tags`都被刪了，這時候才能 add `Tags`，接著 commit 並 push 後就可以把遠端的大寫 `Tags` 資料夾刪除XD
 
 ## Hello World 頁突然會成最新文章
 原因：這是內建生成的頁面，缺少了 `date` 屬性，補上即可。但觸發這個 BUG 使 hello world 變成新文章的原因未知。
