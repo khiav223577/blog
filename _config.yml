@@ -124,7 +124,7 @@ friends:
 # --------------------------------------------
 # Search
 # --------------------------------------------
-swiftype_key: AeQzrVS58KwTaGUqXGwY
+# swiftype_key: AeQzrVS58KwTaGUqXGwY
 
 algolia:
   appId: "XDG1C6ASA4"
@@ -134,7 +134,7 @@ algolia:
   fields:
     - title
     - tags
-    - content
+    - raw
     - path
 
 
