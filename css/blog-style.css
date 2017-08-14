@@ -34,6 +34,7 @@ hr{
     color: #0085a1 !important;
 }
 
+/*
 .sidebar-container .tags a {
     border-color: #bfbfbf;
 }
@@ -42,7 +43,7 @@ hr{
 .sidebar-container .tags a:active {
     border-color: #0085a1;
 }
-
+*/
 .sidebar-container .short-about img {
     width: 100%;
     display: block;
@@ -58,6 +59,44 @@ hr{
 
 .sidebar-container .short-about .list-inline > li {
     padding-left: 0;
+}
+
+/* ---------------------------------------------------------------- */
+/* ● 最新文章 */
+/* ---------------------------------------------------------------- */
+.post-list{
+  padding: 0;
+}
+.post-list-item{
+  list-style: none;
+  text-align: center;
+}
+
+/* ---------------------------------------------------------------- */
+/* ● 所有文章 */
+/* ---------------------------------------------------------------- */
+.archive-list{
+  padding-left: 0;
+  padding-right: 6px;
+}
+.archive-list-item{
+  list-style: none;
+  text-align: center;
+}
+.archive-list-link{
+  display: block;
+}
+.archive-list-count{
+  display: block;
+  padding-left: 100px;
+  margin-top: -22px;
+  font-size: 12px;
+}
+.archive-list-count:before{
+  content: '(';
+}
+.archive-list-count:after{
+  content: ')';
 }
 
 body {
