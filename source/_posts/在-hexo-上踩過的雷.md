@@ -36,3 +36,13 @@ tags:
 git branch --set-upstream-to=origin/master
 ```
 
+## 連不到標籤頁 `blog/Tags`
+原因：預設是小寫的網址，大小寫有差。但生成頁面時若打大寫 `hexo new page Tags`，則就只能用大寫網址進入。
+
+解決方式：想辦法將 `gh-pages` branch 中大寫 `Tags` 資料夾改成小寫的。因為 git 預設是不分大小寫，所以...要自己想辦法。
+有個指令可以讓 git 會去分大小寫，如下：
+```
+git config core.ignorecase false
+```
+但 git 對大小寫支援並不好，中間可能會遇到各種奇葩問題XD :bug::bug:
+
