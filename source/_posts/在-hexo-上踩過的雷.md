@@ -18,3 +18,10 @@ tags:
 1. 刪除遠端 `gh-pages` branch
 2. 刪除本機 `.deploy_git` 資料夾
 3. 再重新部署一次即可。
+
+# 有些主題缺乏一些功能
+慎選主題，否則請自行實作XD
+大部份功能 `hexo` 都有提供[輔助函數](https://hexo.io/zh-tw/docs/helpers.html)，以下列出幾個比較實用的函數：
+- `list_tags` 標籤雲
+- `list_posts` 最新 N 篇文章
+- `list_archives` 歷史文章依日期分類
