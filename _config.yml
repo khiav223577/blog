@@ -89,3 +89,22 @@ ga_track_id: 'UA-89612344-1'            # Format: UA-xxxxxx-xx
 ga_domain: auto
 
 favicon: /blog/imgs/wolf.ico
+
+post-default-img: https://user-images.githubusercontent.com/4011729/29259059-b329fcac-80f1-11e7-9352-b03425360215.jpg
+post-default-img-mobile: https://user-images.githubusercontent.com/4011729/29259059-b329fcac-80f1-11e7-9352-b03425360215.jpg
+
+# --------------------------------------------
+# Sidebar settings
+# --------------------------------------------
+
+sidebar-about-description: # 个人描述
+sidebar-avatar: /blog/imgs/wolf.jpg    # use absolute URL
+
+# SNS settings
+# RSS:
+weibo_username:
+zhihu_username:
+github_username: khiav223577
+twitter_username:
+facebook_username: khiav.reoy
+linkedin_username: rumble-huang-76478890
