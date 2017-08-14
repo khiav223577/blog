@@ -40,7 +40,7 @@ git branch --set-upstream-to=origin/master
 原因：預設是小寫的網址，大小寫有差。但生成頁面時若打大寫 `hexo new page Tags`，則就只能用大寫網址進入。
 
 解決方式：想辦法將 `gh-pages` branch 中大寫 `Tags` 資料夾改成小寫的。因為 git 預設是不分大小寫，所以...要自己想辦法。
-有個指令可以讓 git 會去分大小寫，如下：
+有個指令可以讓 git 會去分大小寫：
 ```
 git config core.ignorecase false
 ```
@@ -50,6 +50,8 @@ git config core.ignorecase false
  - 開啟區分大小寫後，將 `Tags` 改成 小寫 `tags`，commit 上去就是了
  - commit 後遠端可能會不知原因同時存在二個資料夾，但本機又無任何 file changes。此時要在本機將資料夾下所有東西都刪除（或搬移），git status 會看到 `Tags`, `tags`都被刪了，這時候才能 add `Tags`，接著 commit 並 push 後就可以把遠端的大寫 `Tags` 資料夾刪除XD
 
-## Hello World 頁突然會成最新文章
-原因：這是內建生成的頁面，缺少了 `date` 屬性，補上即可。但觸發這個 BUG 使 hello world 變成新文章的原因未知。
+## Hello World 頁突然變成最新文章
+因為這是內建生成的頁面，缺少了 `date` 屬性，補上即可。
+
+但觸發這個 BUG 使 hello world 變成新文章的原因未知。
 
