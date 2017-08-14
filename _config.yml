@@ -97,7 +97,7 @@ post-default-img-mobile: https://user-images.githubusercontent.com/4011729/29259
 # Sidebar settings
 # --------------------------------------------
 
-sidebar-about-description: # 个人描述
+sidebar-about-description: 不想變得普通，卻又害怕不同 # 個人描述
 sidebar-avatar: /blog/imgs/wolf.jpg    # use absolute URL
 
 # SNS settings
