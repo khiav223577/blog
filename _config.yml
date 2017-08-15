@@ -138,9 +138,19 @@ algolia:
     - raw
     - path
 
-# Build settings
+# --------------------------------------------
+# Anchor
+# --------------------------------------------
 anchorjs: true    # if you want to customize anchor. check out line:181 of `post.html`
 
+# --------------------------------------------
+# 討論串
+# --------------------------------------------
+# Disqus settings 
+disqus_username: khiav-blog-1
+
+# Use livere
+use_livere:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
