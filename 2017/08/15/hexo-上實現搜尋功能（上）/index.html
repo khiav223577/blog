@@ -236,9 +236,9 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h2>前言</h2>
+                <h2 id="qian-yan">前言</h2>
 <p>hexo 原生是沒有搜尋功能的，但有些主題會提供搜尋功能，主要分成二種。一種是裝 npm 套件，在打包時先生成索引檔（可能是 <code>JSON</code>, <code>XML</code> 格式），再引入 js 檔自行實作搜尋的功能。另一種則是依賴外部服務，例如<code>Swiftype</code>、<code>Algolia</code>、<code>Azure</code>。在搜尋時發送請求給外部服務，由外部服務回傳搜尋結果。在這裡就不討論好壞了，直接說明我怎麼實現的吧XD</p>
-<h2>Swiftype</h2>
+<h2 id="swiftype">Swiftype</h2>
 <p>這個是我使用的主題 <a href="https://github.com/Haojen/hexo-theme-Anisina" target="_blank" rel="external">Anisina</a> 內建提供的功能，在 <code>_config.yml</code> 內加上一句即可：
 <figure class="highlight yml"><table><tr><td class="code"><pre><div class="line"><span class="attr">swiftype_key:</span> <span class="string">your_application_key</span></div></pre></td></tr></table></figure></p>
 <p>假如以前沒有用過 <a href="https://swiftype.com/" target="_blank" rel="external">Swiftype</a> 的話，要先去註冊一個帳號（PS：限制只能用公司 Email，不能用 Gmail）
@@ -246,7 +246,7 @@
 <p>註冊完之後，點選 <code>Create Engine</code>，綁上部落格的網址後，它的爬蟲就會來你的網站爬資料、建立索引。只不過爬的速度有點慢，等了一整天還沒爬完，一直停留在 <code>Crawling</code> 步驟，如下圖：
 <img src="https://user-images.githubusercontent.com/4011729/29283635-27d45c4c-815a-11e7-9416-281db6c5b2f0.png" alt="crawling forever">
 網路上也沒有人反應有發生過這種狀況，是我太心急嗎XD。總之不管它，等它好了再來更新這篇。等待的時間就改串接別的服務吧。</p>
-<h2>Algolia</h2>
+<h2 id="algolia">Algolia</h2>
 <p>在 hexo 的套件庫挖到 <a href="https://github.com/LouisBarranqueiro/hexo-algoliasearch" target="_blank" rel="external">hexo-algoliasearch</a>
 （還有另一個比較新的套件 <a href="https://github.com/oncletom/hexo-algolia" target="_blank" rel="external">hexo-algolia</a>，功能類似）才知道有這項服務XD。
 照著 github 上的指示裝好後，編輯 <code>_config.yml</code>，加上：
@@ -259,7 +259,7 @@
 <p>不知道如何設定的話，可以參考這篇文件：<a href="https://hexo.io/zh-tw/docs/variables.html" target="_blank" rel="external">Hexo 變數</a> 👀</p>
 </blockquote>
 <p>到這邊後臺大致上都設定完畢了，剩下前臺要自行實作。</p>
-<h2>未完待續...</h2>
+<h2 id="wei-wan-dai-xu">未完待續...</h2>
 
                 <hr>
                 
@@ -291,7 +291,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Swiftype</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Algolia</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">未完待續...</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#qian-yan"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#swiftype"><span class="toc-text">Swiftype</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#algolia"><span class="toc-text">Algolia</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wei-wan-dai-xu"><span class="toc-text">未完待續...</span></a></li></ol>
                 </div>
             </div>
         </div>
