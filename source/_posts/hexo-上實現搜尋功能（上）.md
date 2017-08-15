@@ -37,7 +37,7 @@ algolia:
     - raw
     - path
 ```
-同樣地，也要去 [Algolia](https://www.algolia.com/) 註冊並創建你的 `APPs`，再回來填入你的 key（顯示在後臺 `API Keys`分頁內）。這個服務有免費方案，可以安心使用。:collision:  **這邊要注意的是 `adminApiKey` 不要 commit 到 github 上XD**。套件有支援將 key 設定在環境變數內，但設在環境變數內其實也蠻危險的。最好的方式是分離設定檔，並加到 `.gitignore` 內，不過這就得等善心人事幫那個套件發 PR了～:star2:
+同樣地，也要去 [Algolia](https://www.algolia.com/) 註冊並創建你的 `APPs`，再回來填入你的 key（顯示在後臺 `API Keys`分頁內）。這個服務有免費方案，可以安心使用。:collision:  **這邊要注意的是 `adminApiKey` 不要 commit 到 github 上XD**。套件有支援將 key 設定在環境變數內，但設在環境變數內其實也蠻危險的。最好的方式是分離設定檔，並加到 `.gitignore` 內，不過這就得等善心人士幫那個套件發 PR了～:star2:
 ![algolia console](https://user-images.githubusercontent.com/4011729/29285221-577630c8-8160-11e7-8ccc-eb08c8e3f208.png)
 設好後，輸入 `hexo algolia` 即可自動生成索引檔，並傳到 Algolia 上。假如失敗的話輸入 `hexo clean`清空資料後，再試一次。成功的話，在後臺 `Indices` 頁中就能看到你文章的索引資料。:smile: 
 
