@@ -25,7 +25,7 @@
 <meta property="og:description" content="前言 hexo 原生是沒有搜尋功能的，但有些主題會提供搜尋功能，主要分成二種。一種是裝 npm 套件，在打包時先生成索引檔（可能是 JSON, XML 格式），再引入 js 檔自行實作搜尋的功能。另一種則是依賴外部服務，例如Swiftype、Algolia、Azure。在搜尋時發送請求給外部服務，由外部服務回傳搜尋結果。在這裡就不討論好壞了，直接說明我怎麼實現的吧XD Swiftype 這個是我使">
 <meta property="og:image" content="https://user-images.githubusercontent.com/4011729/29283635-27d45c4c-815a-11e7-9416-281db6c5b2f0.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/4011729/29285221-577630c8-8160-11e7-8ccc-eb08c8e3f208.png">
-<meta property="og:updated_time" content="2017-08-15T12:24:42.000Z">
+<meta property="og:updated_time" content="2017-08-15T14:06:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo 上實現搜尋功能（上）｜像哈士奇的狼">
 <meta name="twitter:description" content="前言 hexo 原生是沒有搜尋功能的，但有些主題會提供搜尋功能，主要分成二種。一種是裝 npm 套件，在打包時先生成索引檔（可能是 JSON, XML 格式），再引入 js 檔自行實作搜尋的功能。另一種則是依賴外部服務，例如Swiftype、Algolia、Azure。在搜尋時發送請求給外部服務，由外部服務回傳搜尋結果。在這裡就不討論好壞了，直接說明我怎麼實現的吧XD Swiftype 這個是我使">
@@ -251,7 +251,7 @@
 （還有另一個比較新的套件 <a href="https://github.com/oncletom/hexo-algolia" target="_blank" rel="external">hexo-algolia</a>，功能類似）才知道有這項服務XD。
 照著 github 上的指示裝好後，編輯 <code>_config.yml</code>，加上：
 <figure class="highlight yml"><table><tr><td class="code"><pre><div class="line"><span class="attr">algolia:</span></div><div class="line"><span class="attr">  appId:</span> <span class="string">"xxxxxxxxxx"</span></div><div class="line"><span class="attr">  apiKey:</span> <span class="string">"xxxxxxxxxxxxxxxxxxxxxxxx"</span></div><div class="line"><span class="attr">  adminApiKey:</span> <span class="string">"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span></div><div class="line"><span class="attr">  chunkSize:</span> <span class="number">5000</span></div><div class="line"><span class="attr">  indexName:</span> <span class="string">"my-hexo-blog"</span></div><div class="line"><span class="attr">  fields:</span></div><div class="line"><span class="bullet">    -</span> <span class="string">title</span></div><div class="line"><span class="bullet">    -</span> <span class="string">tags</span></div><div class="line"><span class="bullet">    -</span> <span class="string">raw</span></div><div class="line"><span class="bullet">    -</span> <span class="string">path</span></div></pre></td></tr></table></figure></p>
-<p>同樣地，也要去 <a href="https://www.algolia.com/" target="_blank" rel="external">Algolia</a> 註冊並創建你的 <code>APPs</code>，再回來填入你的 key（顯示在後臺 <code>API Keys</code>分頁內）。這個服務有免費方案，可以安心使用。💥  <strong>這邊要注意的是 <code>adminApiKey</code> 不要 commit 到 github 上XD</strong>。套件有支援將 key 設定在環境變數內，但設在環境變數內其實也蠻危險的。最好的方式是分離設定檔，並加到 <code>.gitignore</code> 內，不過這就得等善心人事幫那個套件發 PR了～🌟
+<p>同樣地，也要去 <a href="https://www.algolia.com/" target="_blank" rel="external">Algolia</a> 註冊並創建你的 <code>APPs</code>，再回來填入你的 key（顯示在後臺 <code>API Keys</code>分頁內）。這個服務有免費方案，可以安心使用。💥  <strong>這邊要注意的是 <code>adminApiKey</code> 不要 commit 到 github 上XD</strong>。套件有支援將 key 設定在環境變數內，但設在環境變數內其實也蠻危險的。最好的方式是分離設定檔，並加到 <code>.gitignore</code> 內，不過這就得等善心人士幫那個套件發 PR了～🌟
 <img src="https://user-images.githubusercontent.com/4011729/29285221-577630c8-8160-11e7-8ccc-eb08c8e3f208.png" alt="algolia console">
 設好後，輸入 <code>hexo algolia</code> 即可自動生成索引檔，並傳到 Algolia 上。假如失敗的話輸入 <code>hexo clean</code>清空資料後，再試一次。成功的話，在後臺 <code>Indices</code> 頁中就能看到你文章的索引資料。😄</p>
 <blockquote>
