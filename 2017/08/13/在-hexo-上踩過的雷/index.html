@@ -230,14 +230,14 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h2>部署到 github 後頁面未更新</h2>
+                <h2 id="bu-shu-dao-github-hou-ye-mian-wei-geng-xin">部署到 github 後頁面未更新</h2>
 <p>本機測試都正常，也成功部署到 github 上了，網頁卻遲遲沒有更新
 拜讀 stackoverflow 上的這篇 <a href="https://stackoverflow.com/questions/20422279/github-pages-are-not-updating" target="_blank" rel="external">Github Page not updating</a> 後，發現 github 的 setting 頁有顯示錯誤訊息：</p>
 <blockquote>
 <p>Your site is having problems building: The tag fancybox on line 77 in themes/landscape/README.md is not a recognized Liquid tag. For more information, see https://help.github.com/articles/page-build-failed-unknown-tag-error/.</p>
 </blockquote>
 <p>原因是因為預設的 <code>landscape</code> 主題內的<code>README.md</code>有 github 不支援的語法。手動註解那一行，或把那個檔案刪除即可。</p>
-<h2>部署完路徑多一層 public</h2>
+<h2 id="bu-shu-wan-lu-jing-duo-yi-ceng-public">部署完路徑多一層 public</h2>
 <p>路徑變為 <code>https://khiav223577.github.io/blog/public</code>
 發生原因不明。解決方法：</p>
 <ol>
@@ -245,7 +245,7 @@
 <li>刪除本機 <code>.deploy_git</code> 資料夾</li>
 <li>再重新部署一次即可</li>
 </ol>
-<h2>有些主題缺乏一些功能</h2>
+<h2 id="you-xie-zhu-ti-que-fa-yi-xie-gong-neng">有些主題缺乏一些功能</h2>
 <p>慎選主題，否則請自行實作XD
 大部份功能 <code>hexo</code> 都有提供<a href="https://hexo.io/zh-tw/docs/helpers.html" target="_blank" rel="external">輔助函數</a>，以下列出幾個比較實用的函數：</p>
 <ul>
@@ -253,13 +253,13 @@
 <li><code>list_posts</code> 最新 N 篇文章</li>
 <li><code>list_archives</code> 歷史文章依日期分類</li>
 </ul>
-<h2>樣式的改動本機有更新，但部署後沒有</h2>
+<h2 id="yang-shi-de-gai-dong-ben-ji-you-geng-xin-dan-bu-shu-hou-mei-you">樣式的改動本機有更新，但部署後沒有</h2>
 <p>輸入 <code>hexo clean</code> 指令清空所有檔案，再 <code>hexo g</code> 重新打包後，css 才會是最新的。</p>
-<h2>無法 git push，一直叫你要 pull</h2>
+<h2 id="wu-fa-git-push-yi-zhi-jiao-ni-yao-pull">無法 git push，一直叫你要 pull</h2>
 <p>發生原因不明。不知道為什麼在 <code>master</code> branch 上 pull 到的是 <code>gh-pages</code> branch 的資料。
 解決方法，在終端機輸入：
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">git branch --set-upstream-to=origin/master</div></pre></td></tr></table></figure></p>
-<h2>連不到標籤頁 <code>blog/Tags</code></h2>
+<h2 id="lian-bu-dao-biao-qian-ye-code-blog-tags-code">連不到標籤頁 <code>blog/Tags</code></h2>
 <p>原因：預設是小寫的網址，大小寫有差。但生成頁面時若打大寫 <code>hexo new page Tags</code>，則就只能用大寫網址進入。</p>
 <p>解決方式：想辦法將 <code>gh-pages</code> branch 中大寫 <code>Tags</code> 資料夾改成小寫的。因為 git 預設是不分大小寫，所以...要自己想辦法。
 有個指令可以讓 git 會去分大小寫：
@@ -271,7 +271,7 @@
 <li>開啟區分大小寫後，將 <code>Tags</code> 改成 小寫 <code>tags</code>，commit 上去就是了</li>
 <li>commit 後遠端可能會不知原因同時存在二個資料夾，但本機又無任何 file changes。此時要在本機將資料夾下所有東西都刪除（或搬移），git status 會看到 <code>Tags</code>, <code>tags</code>都被刪了，這時候才能 add <code>Tags</code>，接著 commit 並 push 後就可以把遠端的大寫 <code>Tags</code> 資料夾刪除XD</li>
 </ul>
-<h2>Hello World 頁突然變成最新文章</h2>
+<h2 id="hello-world-ye-tu-ran-bian-cheng-zui-xin-wen-zhang">Hello World 頁突然變成最新文章</h2>
 <p>因為這是內建生成的頁面，缺少了 <code>date</code> 屬性，補上即可。</p>
 <p>但觸發這個 BUG 使 hello world 變成新文章的原因未知。</p>
 
@@ -310,7 +310,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">部署到 github 後頁面未更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">部署完路徑多一層 public</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">有些主題缺乏一些功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">樣式的改動本機有更新，但部署後沒有</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">無法 git push，一直叫你要 pull</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">連不到標籤頁 blog/Tags</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Hello World 頁突然變成最新文章</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#bu-shu-dao-github-hou-ye-mian-wei-geng-xin"><span class="toc-text">部署到 github 後頁面未更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bu-shu-wan-lu-jing-duo-yi-ceng-public"><span class="toc-text">部署完路徑多一層 public</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#you-xie-zhu-ti-que-fa-yi-xie-gong-neng"><span class="toc-text">有些主題缺乏一些功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yang-shi-de-gai-dong-ben-ji-you-geng-xin-dan-bu-shu-hou-mei-you"><span class="toc-text">樣式的改動本機有更新，但部署後沒有</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wu-fa-git-push-yi-zhi-jiao-ni-yao-pull"><span class="toc-text">無法 git push，一直叫你要 pull</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lian-bu-dao-biao-qian-ye-code-blog-tags-code"><span class="toc-text">連不到標籤頁 blog/Tags</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hello-world-ye-tu-ran-bian-cheng-zui-xin-wen-zhang"><span class="toc-text">Hello World 頁突然變成最新文章</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -392,7 +392,7 @@
                         <h5 class="text-center">友情連結</h5>
                         <ul class="list-inline text-center">
                             
-                            <li><a href="https://sites.google.com/site/echoourvoice/">回音</a></li>
+                            <li><a href="http://echo2010.weebly.com/">回音</a></li>
                             
                             <li><a href="https://www.pagamo.org/">PaGamO</a></li>
                             
