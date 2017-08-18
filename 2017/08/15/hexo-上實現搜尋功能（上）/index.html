@@ -16,19 +16,19 @@
 
     <meta property="og:image" content="/blog/imgs/wolf.jpg" />
     <meta property="og:image" content="https://user-images.githubusercontent.com/4011729/29259059-b329fcac-80f1-11e7-9352-b03425360215.jpg" />
-    <meta name="description" content="前言 hexo 原生是沒有搜尋功能的，但有些主題會提供搜尋功能，主要分成二種。一種是裝 npm 套件，在打包時先生成索引檔（可能是 JSON, XML 格式），再引入 js 檔自行實作搜尋的功能。另一種則是依賴外部服務，例如Swiftype、Algolia、Azure。在搜尋時發送請求給外部服務，由外部服務回傳搜尋結果。在這裡就不討論好壞了，直接說明我怎麼實現的吧XD Swiftype 這個是我使">
+    <meta name="description" content="前言hexo 原生是沒有搜尋功能的，但有些主題會提供搜尋功能，主要分成二種。一種是裝 npm 套件，在打包時先生成索引檔（可能是 JSON, XML 格式），再引入 js 檔自行實作搜尋的功能。另一種則是依賴外部服務，例如Swiftype、Algolia、Azure。在搜尋時發送請求給外部服務，由外部服務回傳搜尋結果。在這裡就不討論好壞了，直接說明我怎麼實現的吧XD Swiftype這個是我使用的">
 <meta name="keywords" content="Hexo,Algolia">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo 上實現搜尋功能（上）｜像哈士奇的狼">
 <meta property="og:url" content="https://khiav223577.github.io/blog/2017/08/15/hexo-上實現搜尋功能（上）/index.html">
 <meta property="og:site_name" content="狼">
-<meta property="og:description" content="前言 hexo 原生是沒有搜尋功能的，但有些主題會提供搜尋功能，主要分成二種。一種是裝 npm 套件，在打包時先生成索引檔（可能是 JSON, XML 格式），再引入 js 檔自行實作搜尋的功能。另一種則是依賴外部服務，例如Swiftype、Algolia、Azure。在搜尋時發送請求給外部服務，由外部服務回傳搜尋結果。在這裡就不討論好壞了，直接說明我怎麼實現的吧XD Swiftype 這個是我使">
+<meta property="og:description" content="前言hexo 原生是沒有搜尋功能的，但有些主題會提供搜尋功能，主要分成二種。一種是裝 npm 套件，在打包時先生成索引檔（可能是 JSON, XML 格式），再引入 js 檔自行實作搜尋的功能。另一種則是依賴外部服務，例如Swiftype、Algolia、Azure。在搜尋時發送請求給外部服務，由外部服務回傳搜尋結果。在這裡就不討論好壞了，直接說明我怎麼實現的吧XD Swiftype這個是我使用的">
 <meta property="og:image" content="https://user-images.githubusercontent.com/4011729/29283635-27d45c4c-815a-11e7-9416-281db6c5b2f0.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/4011729/29285221-577630c8-8160-11e7-8ccc-eb08c8e3f208.png">
-<meta property="og:updated_time" content="2017-08-15T14:06:31.000Z">
+<meta property="og:updated_time" content="2017-08-18T08:52:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo 上實現搜尋功能（上）｜像哈士奇的狼">
-<meta name="twitter:description" content="前言 hexo 原生是沒有搜尋功能的，但有些主題會提供搜尋功能，主要分成二種。一種是裝 npm 套件，在打包時先生成索引檔（可能是 JSON, XML 格式），再引入 js 檔自行實作搜尋的功能。另一種則是依賴外部服務，例如Swiftype、Algolia、Azure。在搜尋時發送請求給外部服務，由外部服務回傳搜尋結果。在這裡就不討論好壞了，直接說明我怎麼實現的吧XD Swiftype 這個是我使">
+<meta name="twitter:description" content="前言hexo 原生是沒有搜尋功能的，但有些主題會提供搜尋功能，主要分成二種。一種是裝 npm 套件，在打包時先生成索引檔（可能是 JSON, XML 格式），再引入 js 檔自行實作搜尋的功能。另一種則是依賴外部服務，例如Swiftype、Algolia、Azure。在搜尋時發送請求給外部服務，由外部服務回傳搜尋結果。在這裡就不討論好壞了，直接說明我怎麼實現的吧XD Swiftype這個是我使用的">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/4011729/29283635-27d45c4c-815a-11e7-9416-281db6c5b2f0.png">
 
     <link rel="shortcut icon" href="/blog/imgs/wolf.ico">
@@ -50,11 +50,11 @@
     <!-- Pygments Github CSS -->
     <link rel="stylesheet" href="/blog/css/syntax.css">
 
-    <link rel="stylesheet" href="/blog/css/algolia.css">
-    <script src="/blog/js/algolia.js"></script>
-    <script src="/blog/js/instantsearch.min.js"></script>
-
-    <script src="/blog/js/lodash.min.js"></script>
+    
+      <link rel="stylesheet" href="/blog/css/algolia.css">
+      <script src="/blog/js/algolia.js"></script>
+      <script src="/blog/js/instantsearch.min.js"></script>
+    
 </head>
 
 <style>
@@ -159,6 +159,7 @@
         }
     }
 </script>
+
 <div class="site-search">
   <div class="algolia-popup popup">
     <div class="algolia-search">
@@ -236,30 +237,18 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h2 id="qian-yan">前言</h2>
-<p>hexo 原生是沒有搜尋功能的，但有些主題會提供搜尋功能，主要分成二種。一種是裝 npm 套件，在打包時先生成索引檔（可能是 <code>JSON</code>, <code>XML</code> 格式），再引入 js 檔自行實作搜尋的功能。另一種則是依賴外部服務，例如<code>Swiftype</code>、<code>Algolia</code>、<code>Azure</code>。在搜尋時發送請求給外部服務，由外部服務回傳搜尋結果。在這裡就不討論好壞了，直接說明我怎麼實現的吧XD</p>
-<h2 id="swiftype">Swiftype</h2>
-<p>這個是我使用的主題 <a href="https://github.com/Haojen/hexo-theme-Anisina" target="_blank" rel="external">Anisina</a> 內建提供的功能，在 <code>_config.yml</code> 內加上一句即可：
-<figure class="highlight yml"><table><tr><td class="code"><pre><div class="line"><span class="attr">swiftype_key:</span> <span class="string">your_application_key</span></div></pre></td></tr></table></figure></p>
-<p>假如以前沒有用過 <a href="https://swiftype.com/" target="_blank" rel="external">Swiftype</a> 的話，要先去註冊一個帳號（PS：限制只能用公司 Email，不能用 Gmail）
-註冊完會有 14 天的 <code>Free Trial</code>，但它沒有免費方案，而且超貴，最便宜的也要 <code>299/mo</code>（美金！？）。不過<a href="http://www.jerryfu.net/post/search-engine-for-hexo-with-swiftype-v2.html" target="_blank" rel="external">聽說</a>免費試用到了後，會給你一個選擇降級成免費帳號（？）</p>
-<p>註冊完之後，點選 <code>Create Engine</code>，綁上部落格的網址後，它的爬蟲就會來你的網站爬資料、建立索引。只不過爬的速度有點慢，等了一整天還沒爬完，一直停留在 <code>Crawling</code> 步驟，如下圖：
-<img src="https://user-images.githubusercontent.com/4011729/29283635-27d45c4c-815a-11e7-9416-281db6c5b2f0.png" alt="crawling forever">
-網路上也沒有人反應有發生過這種狀況，是我太心急嗎XD。總之不管它，等它好了再來更新這篇。等待的時間就改串接別的服務吧。</p>
-<h2 id="algolia">Algolia</h2>
-<p>在 hexo 的套件庫挖到 <a href="https://github.com/LouisBarranqueiro/hexo-algoliasearch" target="_blank" rel="external">hexo-algoliasearch</a>
-（還有另一個比較新的套件 <a href="https://github.com/oncletom/hexo-algolia" target="_blank" rel="external">hexo-algolia</a>，功能類似）才知道有這項服務XD。
-照著 github 上的指示裝好後，編輯 <code>_config.yml</code>，加上：
-<figure class="highlight yml"><table><tr><td class="code"><pre><div class="line"><span class="attr">algolia:</span></div><div class="line"><span class="attr">  appId:</span> <span class="string">"xxxxxxxxxx"</span></div><div class="line"><span class="attr">  apiKey:</span> <span class="string">"xxxxxxxxxxxxxxxxxxxxxxxx"</span></div><div class="line"><span class="attr">  adminApiKey:</span> <span class="string">"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span></div><div class="line"><span class="attr">  chunkSize:</span> <span class="number">5000</span></div><div class="line"><span class="attr">  indexName:</span> <span class="string">"my-hexo-blog"</span></div><div class="line"><span class="attr">  fields:</span></div><div class="line"><span class="bullet">    -</span> <span class="string">title</span></div><div class="line"><span class="bullet">    -</span> <span class="string">tags</span></div><div class="line"><span class="bullet">    -</span> <span class="string">raw</span></div><div class="line"><span class="bullet">    -</span> <span class="string">path</span></div></pre></td></tr></table></figure></p>
-<p>同樣地，也要去 <a href="https://www.algolia.com/" target="_blank" rel="external">Algolia</a> 註冊並創建你的 <code>APPs</code>，再回來填入你的 key（顯示在後臺 <code>API Keys</code>分頁內）。這個服務有免費方案，可以安心使用。💥  <strong>這邊要注意的是 <code>adminApiKey</code> 不要 commit 到 github 上XD</strong>。套件有支援將 key 設定在環境變數內，但設在環境變數內其實也蠻危險的。最好的方式是分離設定檔，並加到 <code>.gitignore</code> 內，不過這就得等善心人士幫那個套件發 PR了～🌟
-<img src="https://user-images.githubusercontent.com/4011729/29285221-577630c8-8160-11e7-8ccc-eb08c8e3f208.png" alt="algolia console">
-設好後，輸入 <code>hexo algolia</code> 即可自動生成索引檔，並傳到 Algolia 上。假如失敗的話輸入 <code>hexo clean</code>清空資料後，再試一次。成功的話，在後臺 <code>Indices</code> 頁中就能看到你文章的索引資料。😄</p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>hexo 原生是沒有搜尋功能的，但有些主題會提供搜尋功能，主要分成二種。一種是裝 npm 套件，在打包時先生成索引檔（可能是 <code>JSON</code>, <code>XML</code> 格式），再引入 js 檔自行實作搜尋的功能。另一種則是依賴外部服務，例如<code>Swiftype</code>、<code>Algolia</code>、<code>Azure</code>。在搜尋時發送請求給外部服務，由外部服務回傳搜尋結果。在這裡就不討論好壞了，直接說明我怎麼實現的吧XD</p>
+<h2 id="Swiftype"><a href="#Swiftype" class="headerlink" title="Swiftype"></a>Swiftype</h2><p>這個是我使用的主題 <a href="https://github.com/Haojen/hexo-theme-Anisina" target="_blank" rel="external">Anisina</a> 內建提供的功能，在 <code>_config.yml</code> 內加上一句即可：<br><figure class="highlight yml"><table><tr><td class="code"><pre><div class="line"><span class="attr">swiftype_key:</span> <span class="string">your_application_key</span></div></pre></td></tr></table></figure></p>
+<p>假如以前沒有用過 <a href="https://swiftype.com/" target="_blank" rel="external">Swiftype</a> 的話，要先去註冊一個帳號（PS：限制只能用公司 Email，不能用 Gmail）<br>註冊完會有 14 天的 <code>Free Trial</code>，但它沒有免費方案，而且超貴，最便宜的也要 <code>299/mo</code>（美金！？）。不過<a href="http://www.jerryfu.net/post/search-engine-for-hexo-with-swiftype-v2.html" target="_blank" rel="external">聽說</a>免費試用到了後，會給你一個選擇降級成免費帳號（？）</p>
+<p>註冊完之後，點選 <code>Create Engine</code>，綁上部落格的網址後，它的爬蟲就會來你的網站爬資料、建立索引。只不過爬的速度有點慢，等了一整天還沒爬完，一直停留在 <code>Crawling</code> 步驟，如下圖：<br><img src="https://user-images.githubusercontent.com/4011729/29283635-27d45c4c-815a-11e7-9416-281db6c5b2f0.png" alt="crawling forever"><br>網路上也沒有人反應有發生過這種狀況，是我太心急嗎XD。總之不管它，等它好了再來更新這篇。等待的時間就改串接別的服務吧。</p>
+<h2 id="Algolia"><a href="#Algolia" class="headerlink" title="Algolia"></a>Algolia</h2><p>在 hexo 的套件庫挖到 <a href="https://github.com/LouisBarranqueiro/hexo-algoliasearch" target="_blank" rel="external">hexo-algoliasearch</a><br>（還有另一個比較新的套件 <a href="https://github.com/oncletom/hexo-algolia" target="_blank" rel="external">hexo-algolia</a>，功能類似）才知道有這項服務XD。<br>照著 github 上的指示裝好後，編輯 <code>_config.yml</code>，加上：<br><figure class="highlight yml"><table><tr><td class="code"><pre><div class="line"><span class="attr">algolia:</span></div><div class="line"><span class="attr">  appId:</span> <span class="string">"xxxxxxxxxx"</span></div><div class="line"><span class="attr">  apiKey:</span> <span class="string">"xxxxxxxxxxxxxxxxxxxxxxxx"</span></div><div class="line"><span class="attr">  adminApiKey:</span> <span class="string">"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span></div><div class="line"><span class="attr">  chunkSize:</span> <span class="number">5000</span></div><div class="line"><span class="attr">  indexName:</span> <span class="string">"my-hexo-blog"</span></div><div class="line"><span class="attr">  fields:</span></div><div class="line"><span class="bullet">    -</span> <span class="string">title</span></div><div class="line"><span class="bullet">    -</span> <span class="string">tags</span></div><div class="line"><span class="bullet">    -</span> <span class="string">raw</span></div><div class="line"><span class="bullet">    -</span> <span class="string">path</span></div></pre></td></tr></table></figure></p>
+<p>同樣地，也要去 <a href="https://www.algolia.com/" target="_blank" rel="external">Algolia</a> 註冊並創建你的 <code>APPs</code>，再回來填入你的 key（顯示在後臺 <code>API Keys</code>分頁內）。這個服務有免費方案，可以安心使用。💥 <strong>這邊要注意的是 <code>adminApiKey</code> 不要 commit 到 github 上XD</strong>。套件有支援將 key 設定在環境變數內，但設在環境變數內其實也蠻危險的。最好的方式是分離設定檔，並加到 <code>.gitignore</code> 內，不過這就得等善心人士幫那個套件發 PR 了～⭐<br><img src="https://user-images.githubusercontent.com/4011729/29285221-577630c8-8160-11e7-8ccc-eb08c8e3f208.png" alt="algolia console"><br>設好後，輸入 <code>hexo algolia</code> 即可自動生成索引檔，並傳到 Algolia 上。假如失敗的話輸入 <code>hexo clean</code>清空資料後，再試一次。成功的話，在後臺 <code>Indices</code> 頁中就能看到你文章的索引資料。😃</p>
 <blockquote>
 <p>若想要自訂索引資料的話，可自行修改 yml 內的 <code>fields</code>。</p>
 <p>不知道如何設定的話，可以參考這篇文件：<a href="https://hexo.io/zh-tw/docs/variables.html" target="_blank" rel="external">Hexo 變數</a> 👀</p>
 </blockquote>
 <p>到這邊後臺大致上都設定完畢了，剩下前臺要自行實作。</p>
-<h2 id="wei-wan-dai-xu">未完待續...</h2>
+<h2 id="未完待續…"><a href="#未完待續…" class="headerlink" title="未完待續…"></a>未完待續…</h2><p><a href="/blog/2017/08/18/hexo-%E4%B8%8A%E5%AF%A6%E7%8F%BE%E6%90%9C%E5%B0%8B%E5%8A%9F%E8%83%BD%EF%BC%88%E4%B8%8B%EF%BC%89/">hexo 上實現搜尋功能（下）</a></p>
 
                 <hr>
                 
@@ -271,6 +260,11 @@
                            title="在 hexo 上踩過的雷">&larr; Previous Post</a>
                     </li>
                     
+                    
+                    <li class="next">
+                        <a href="/blog/2017/08/18/hexo-上實現搜尋功能（下）/" data-toggle="tooltip" data-placement="top"
+                           title="hexo 上實現搜尋功能（下）">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
 
@@ -291,7 +285,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#qian-yan"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#swiftype"><span class="toc-text">Swiftype</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#algolia"><span class="toc-text">Algolia</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wei-wan-dai-xu"><span class="toc-text">未完待續...</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Swiftype"><span class="toc-text">Swiftype</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Algolia"><span class="toc-text">Algolia</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#未完待續…"><span class="toc-text">未完待續…</span></a></li></ol>
                 </div>
             </div>
         </div>
