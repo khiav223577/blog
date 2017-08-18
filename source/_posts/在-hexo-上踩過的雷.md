@@ -44,7 +44,7 @@ git branch --set-upstream-to=origin/master
 ```
 git config core.ignorecase false
 ```
-但 git 對大小寫支援並不好，中間可能會遇到各種奇葩問題，然後又會遇到 deploy 時被蓋掉的問題XD :bug::bug:
+但 git 對大小寫支援並不好，中間可能會遇到各種奇葩問題，然後又會遇到 deploy 時被蓋掉的問題XD 🐛🐛
 總之大概有幾點要做：
  - 要去隱藏資料夾 `.deploy_git/` 內改動才有效
  - 開啟區分大小寫後，將 `Tags` 改成 小寫 `tags`，commit 上去就是了
