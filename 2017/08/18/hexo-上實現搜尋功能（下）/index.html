@@ -102,7 +102,7 @@
                         
 							
                         <li>
-                            <a href="/blog/archive/">Archive</a>
+                            <a href="/blog/tags/">Tags</a>
                         </li>
 							
 						
@@ -110,7 +110,7 @@
                         
 							
                         <li>
-                            <a href="/blog/tags/">Tags</a>
+                            <a href="/blog/archive/">Archive</a>
                         </li>
 							
 						
@@ -205,10 +205,20 @@
                     <h1>hexo 上實現搜尋功能（下）</h1>
                     
                     <span class="meta">
-                         作者 狼
-                        <span>
-                          日期 2017-08-18
-                         </span>
+                      <span>
+                        作者 狼
+                      </span>
+                      <span class="spliter">|</span>
+                      <span>
+                        日期 2017-08-18
+                      </span>
+                      <span class="spliter">|</span>
+                      <span id="busuanzi_container_page_pv">
+                        <i class="fa fa-eye"></i>
+                        <span id="busuanzi_value_page_pv">
+                          <i class="fa fa-spinner fa-spin"></i>
+                        </span>
+                      </span>
                     </span>
                     <div class="tags text-center">
                         
@@ -414,15 +424,19 @@
                 <p class="copyright text-muted">
                     Copyright &copy; 狼 2017
                     <br>
-                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">
-                      本站總訪問量<br>
-                      <span id="busuanzi_value_site_pv"></span> 次
+                    <span>
+                      <span id="busuanzi_container_site_pv">                      
+                        <i class="fa fa-eye" style="margin-right: 3px;" data-toggle="tooltip" title="本站總訪問量"></i>
+                        <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>
+                      </span>
+                      <span style="margin: 0 5px;">| </span>
+                      <span id="busuanzi_container_site_uv">
+                        <i class="fa fa-user" style="margin-right: 2px;" data-toggle="tooltip" title="本站總訪客數"></i>
+                        <span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span>
+                      </span>
                     </span>
+                    
                     <br>
-                    <span id="busuanzi_container_site_uv" style="font-size: 12px;">
-                      本站總訪客數<br>
-                      <span id="busuanzi_value_site_uv"></span> 次
-                    </span>
                     <br>
                     Theme by <a target="_blank" href="https://haojen.github.io/">Haojen Ma</a>
                 </p>
