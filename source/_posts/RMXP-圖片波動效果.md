@@ -41,6 +41,34 @@ sprite.wave_amp = 2
 ![echo wave effect example](/blog/RM/rmxp_wave_effect_echo.gif)
 
 
+## 腳本實作方式
+
+核心想法是將原始圖片切成許多橫條，用 `sin` 函式計算每個橫條的 `X 位移量`。根據位移量移動每個橫條，再將所有橫條拼接起來，就可以產生波浪波動的感覺。
+Pseudo code：
+```rb
+# 每 1 pixel 切成一個橫條
+for i in 0..height
+  # 計算 X 位移量
+  xchg = @wave_amp * Math.sin(@wave_phase)
+  # 將橫條從原圖（origin_bitmap）切出來，傳到新圖（new_bitmap）中
+  new_bitmap.blt(x, i, @origin_bitmap, Rect.new(0, i, width, 1))
+end
+```
+
+## 快取機制
+
+由於每一幀都要大量切割、拼接圖片。在圖片大的時候會造成很大的負擔，導致遊戲 `Lag`。但實際上，由於 `sin 正弦波`同樣的波形會不斷出現。因此很適合將計算完的圖片暫存住，重複利用，避免每次計算完就丟棄計算結果。程式中的實作也很簡單，只要對 `wave_amp` 快取即可，例如：
+```rb
+def get_waved_bitmap
+  @wave_effect_cache ||= {}
+  return (@wave_effect_cache[@wave_phase] ||= get_waved_bitmap_without_cache)
+end
+```
+
+原先回音的扭曲空間中，非常的頓，`FPS` 只有 `2x`。實作該快取機制後 `FPS` 提升到接近 `40`。
+
+
+
 
 
 
