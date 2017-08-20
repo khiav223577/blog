@@ -8,22 +8,22 @@ tags:
   - Wave Effect
 ---
 <a href="/blog/RM/rmxp_wave_effect.rb" target="_blank">下載腳本</a>
-<a href="/blog/RM/rmxp_wave_effect.rar" target="_blank">下載範例專案</a>
+<a href="/blog/RM/rmxp_wave_effect.rar" target="_blank">下載 DEMO 範例專案</a>
 
 ## 使用方法
 
 先下載腳本，放到 `main` 前。這個腳本會擴展 `Sprite` ，增加四個屬性：
 
-- wave_amp
+- ** wave_amp **
   波動的幅度，預設 0
 
-- wave_length
+- ** wave_length **
   波長，波長越長波峰數量越少。單位是像素，預設 72px
 
-- wave_speed
+- ** wave_speed **
   波速，波速越高頻率越高，預設 720
 
-- wave_phase
+- ** wave_phase **
   相位，單位為角度。在每次刷新時會不斷更新此屬性。
 
 使用時直接對 `Sprite` 操作即可，例如：
