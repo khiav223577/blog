@@ -7,3 +7,5 @@ tags:
   - Sprite
   - Wave Effect
 ---
+<a href="/blog/scripts/rmxp_wave_effect.rb" target="_blank">下載腳本</a>
+

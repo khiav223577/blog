@@ -39,10 +39,19 @@
 =end
 
 class Sprite
-  attr_accessor   :wave_amp
+  attr_reader     :wave_amp
   attr_accessor   :wave_length
   attr_accessor   :wave_speed
   attr_accessor   :wave_phase
+  def wave_amp=(v)
+    v ||= 0
+    if @wave_amp != 0 and v == 0
+      dispose_wave_cache
+    end
+    self.bitmap_without_wave = @temp_bitmap if @temp_bitmap
+    @wave_amp = v
+    return v
+  end
   
 #--------------------------------------------------------------------------
 # ● 初始化
