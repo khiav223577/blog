@@ -44,7 +44,7 @@ sprite.wave_amp = 2
 ## 腳本實作方式
 
 核心想法是將原始圖片切成許多橫條，用 `sin` 函式計算每個橫條的 `X 位移量`。根據位移量移動每個橫條，再將所有橫條拼接起來，就可以產生波浪波動的感覺。
-Pseudo code：
+### Pseudo code
 ```rb
 # 每 1 pixel 切成一個橫條
 for i in 0..height
