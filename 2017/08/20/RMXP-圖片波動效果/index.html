@@ -23,7 +23,7 @@
 <meta property="og:description" content="下載腳本下載 DEMO 範例專案 使用方法先下載腳本，放到 main 前。這個腳本會擴展 Sprite ，增加四個屬性：   wave_amp 波動的幅度，預設 0   wave_length 波長，波長越長波峰數量越少。單位是像素，預設 72px   wave_speed 波速，波速越高頻率越高，預設 720   wave_phase 相位，單位為角度。在每次刷新時會不斷更新此屬性。   使用時">
 <meta property="og:image" content="https://khiav223577.github.io/blog/RM/rmxp_wave_effect_wolf.gif">
 <meta property="og:image" content="https://khiav223577.github.io/blog/RM/rmxp_wave_effect_echo.gif">
-<meta property="og:updated_time" content="2017-08-20T14:52:12.000Z">
+<meta property="og:updated_time" content="2017-08-20T14:55:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RMXP 圖片波動效果｜像哈士奇的狼">
 <meta name="twitter:description" content="下載腳本下載 DEMO 範例專案 使用方法先下載腳本，放到 main 前。這個腳本會擴展 Sprite ，增加四個屬性：   wave_amp 波動的幅度，預設 0   wave_length 波長，波長越長波峰數量越少。單位是像素，預設 72px   wave_speed 波速，波速越高頻率越高，預設 720   wave_phase 相位，單位為角度。在每次刷新時會不斷更新此屬性。   使用時">
@@ -268,7 +268,7 @@
 <h2 id="腳本實作方式"><a href="#腳本實作方式" class="headerlink" title="腳本實作方式"></a>腳本實作方式</h2><p>核心想法是將原始圖片切成許多橫條，用 <code>sin</code> 函式計算每個橫條的 <code>X 位移量</code>。根據位移量移動每個橫條，再將所有橫條拼接起來，就可以產生波浪波動的感覺。</p>
 <h3 id="Pseudo-code"><a href="#Pseudo-code" class="headerlink" title="Pseudo code"></a>Pseudo code</h3><figure class="highlight rb"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 每 1 pixel 切成一個橫條</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..height</div><div class="line">  <span class="comment"># 計算 X 位移量</span></div><div class="line">  xchg = @wave_amp * Math.sin(@wave_phase)</div><div class="line">  <span class="comment"># 將橫條從原圖（origin_bitmap）切出來，傳到新圖（new_bitmap）中</span></div><div class="line">  new_bitmap.blt(x, i, @origin_bitmap, Rect.new(<span class="number">0</span>, i, width, <span class="number">1</span>))</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 <h2 id="快取機制"><a href="#快取機制" class="headerlink" title="快取機制"></a>快取機制</h2><p>由於每一幀都要大量切割、拼接圖片。在圖片大的時候會造成很大的負擔，導致遊戲 <code>Lag</code>。但實際上，由於 <code>sin 正弦波</code>同樣的波形會不斷出現。因此很適合將計算完的圖片暫存住，重複利用，避免每次計算完就丟棄計算結果。程式中的實作也很簡單，只要拿 <code>wave_phase</code> 當 <code>key</code> 快取計算結果即可，例如：<br><figure class="highlight rb"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_waved_bitmap</span></span></div><div class="line">  @wave_effect_cache <span class="params">||</span>= &#123;&#125;</div><div class="line">  <span class="keyword">return</span> (@wave_effect_cache[@wave_phase] <span class="params">||</span>= get_waved_bitmap_without_cache)</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
-<p>原先回音的扭曲空間中，非常的頓，<code>FPS</code> 只有 <code>2x</code>。實作該快取機制後 <code>FPS</code> 提升到接近 <code>40</code>。</p>
+<p>原先在回音的扭曲空間中，遊戲非常的頓，<code>FPS</code> 只有 <code>2x</code>。實作該快取機制後 <code>FPS</code> 提升到接近 <code>40</code>。</p>
 
                 <hr>
                 
