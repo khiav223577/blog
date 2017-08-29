@@ -1,7 +1,7 @@
 ---
-title: mac 常用設定筆記
+title: Mac 常用設定筆記
 date: 2017-08-29 02:04:11
-tags: mac
+tags: Mac
 ---
 指令使用方法：開啟「終端機」視窗，貼上指令即可。
 ![image](https://user-images.githubusercontent.com/4011729/29791881-30c693d4-8c71-11e7-8e28-e1fb52374e75.png)
