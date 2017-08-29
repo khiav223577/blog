@@ -4,7 +4,7 @@ date: 2017-08-20 19:34:41
 tags:
   - RMXP
   - RGSS
-  - Sprite
+  - RPG Maker
   - Wave Effect
 ---
 <a href="/blog/RM/rmxp_wave_effect.rb" target="_blank">下載腳本</a>
