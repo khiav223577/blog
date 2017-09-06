@@ -91,8 +91,8 @@ ga_domain: auto
 
 favicon: /blog/imgs/wolf.ico
 
-post-default-img: https://user-images.githubusercontent.com/4011729/29259059-b329fcac-80f1-11e7-9352-b03425360215.jpg
-post-default-img-mobile: https://user-images.githubusercontent.com/4011729/29259059-b329fcac-80f1-11e7-9352-b03425360215.jpg
+post-default-img: https://user-images.githubusercontent.com/4011729/30096835-30079d24-930d-11e7-8876-68915cb7a85d.jpg
+post-default-img-mobile: https://user-images.githubusercontent.com/4011729/30096835-30079d24-930d-11e7-8876-68915cb7a85d.jpg
 header-img: /blog/imgs/water-blue.jpg
 
 # --------------------------------------------
