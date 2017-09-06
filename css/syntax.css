@@ -79,7 +79,10 @@ figure.highlight .code {
 figure.highlight .line {
   height: 20px;
 }
-pre .comment,
+pre .comment {
+  color: #006c00;
+  font-style: italic;
+}
 pre .template_comment,
 pre .diff .header,
 pre .doctype,
@@ -89,7 +92,9 @@ pre .javadoc {
   color: #93a1a1;
   font-style: italic;
 }
-pre .keyword,
+pre .keyword {
+  color: #00f;
+}
 pre .winutils,
 pre .method,
 pre .addition,
@@ -99,9 +104,16 @@ pre .status,
 pre .nginx .title {
   color: #859900;
 }
-pre .number,
+pre .number {
+  color: #800000;
+}
+pre .string {
+  color: #800080;
+}
+pre .params {
+  color: #0080ff;
+}
 pre .command,
-pre .string,
 pre .tag .value,
 pre .phpdoc,
 pre .tex .formula,
@@ -109,7 +121,9 @@ pre .regexp,
 pre .hexcolor {
   color: #2aa198;
 }
-pre .title,
+pre .title {
+  font-style: italic;
+}
 pre .localvars,
 pre .chunk,
 pre .decorator,
