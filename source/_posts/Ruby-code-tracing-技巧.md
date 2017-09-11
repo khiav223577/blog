@@ -39,7 +39,9 @@ User.new.method(:to_yaml)
 有了函式物件後，我們可以先稍微看一下該物件有什麼函式可以用。但是因為物件是繼承來的，繼承了非常多的函式，難以搜尋該物件真正定義的函式。此時我們可以直接將取得到函式扣掉 `self.methods` ，就能排除掉繼承來的函式了：
 ```rb
 User.new.method(:to_json).methods - methods
-# => [:[], :to_proc, :call, :name, :receiver, :arity, :curry, :source_location, :parameters, :original_name, :owner, :unbind, :super_method] 
+# => [:[], :to_proc, :call, :name, :receiver, :arity, :curry, 
+# :source_location, :parameters, :original_name, :owner, :unbind, :super_method] 
+
 methods.size
 # => 164
 ```
@@ -50,7 +52,9 @@ methods.size
 
 ```rb
 location = User.new.method(:to_json).source_location
-# => ["/Users/khiav223577/.rvm/gems/ruby-2.3.3/gems/activesupport-4.2.9/lib/active_support/core_ext/object/json.rb", 31] 
+# => ["/Users/khiav223577/.rvm/gems/ruby-2.3.3/gems/activesupport-4.2.9/lib/
+# active_support/core_ext/object/json.rb", 31]
+
 `open #{location[0]}` # 開啟編輯器
 # => ""
 ```
