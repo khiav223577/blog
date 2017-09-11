@@ -93,7 +93,8 @@ favicon: /blog/imgs/wolf.ico
 
 post-default-img: https://user-images.githubusercontent.com/4011729/30097457-55bd1d70-9310-11e7-8426-8e36ad8f6686.jpg
 post-default-img-mobile: https://user-images.githubusercontent.com/4011729/30097457-55bd1d70-9310-11e7-8426-8e36ad8f6686.jpg
-header-img: /blog/imgs/water-blue.jpg
+# 註：因為 og:image 的關係，要用絕對路徑
+header-img: https://khiav223577.github.io/blog/imgs/water-blue.jpg
 
 # --------------------------------------------
 # Sidebar settings
