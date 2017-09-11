@@ -36,7 +36,7 @@ User.new.method(:to_yaml)
 # => #<Method: User(Object)#to_yaml(psych_to_yaml)> 
 ```
 
-有了函式物件後，我們可以先稍微看一下該物件有什麼函式可以用。但是因為物件是繼承來的，繼承了非常多的函式，難以搜尋該物件真正定義的函式。此時我們可以直接將取得到函式扣掉 `self.methods` ，就能排除掉繼承來的函式了：
+有了函式物件後，我們可以先稍微看一下該物件有什麼函式可以用。但是因為物件是繼承 `Object` 來的，也一併繼承了非常多的內建函式，難以搜尋該物件真正定義的函式。此時我們可以直接將取得到函式扣掉 `self.methods` ，就能排除掉原生函式了：
 ```rb
 User.new.method(:to_json).methods - methods
 # => [:[], :to_proc, :call, :name, :receiver, :arity, :curry, 
