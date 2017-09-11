@@ -14,23 +14,27 @@
 
     <meta property="og:image" content="/blog/imgs/wolf.jpg" />
     <meta property="og:image" content="https://user-images.githubusercontent.com/4011729/30097457-55bd1d70-9310-11e7-8426-8e36ad8f6686.jpg" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Tags｜像哈士奇的狼">
-<meta property="og:url" content="https://khiav223577.github.io/blog/tags/index.html">
+    <meta name="description" content="搜尋物件上的方法Ruby 反射機制中提供了 methods 方法，可以回傳物件上所有可以使用的方法。再配合上 Enumerable#grep 函式，能找到函式名字符合搜尋規則的項。如： User.new.methods.grep /json$/# =&amp;gt; [:include_root_in_json, :as_json, :from_json, :to_json]  這邊要注意到的一點是：me">
+<meta name="keywords" content="Ruby">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ruby code tracing 技巧｜像哈士奇的狼">
+<meta property="og:url" content="https://khiav223577.github.io/blog/2017/09/11/Ruby-code-tracing-技巧/index.html">
 <meta property="og:site_name" content="狼">
-<meta property="og:updated_time" content="2017-08-14T19:23:33.000Z">
+<meta property="og:description" content="搜尋物件上的方法Ruby 反射機制中提供了 methods 方法，可以回傳物件上所有可以使用的方法。再配合上 Enumerable#grep 函式，能找到函式名字符合搜尋規則的項。如： User.new.methods.grep /json$/# =&amp;gt; [:include_root_in_json, :as_json, :from_json, :to_json]  這邊要注意到的一點是：me">
+<meta property="og:updated_time" content="2017-09-11T01:50:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tags｜像哈士奇的狼">
+<meta name="twitter:title" content="Ruby code tracing 技巧｜像哈士奇的狼">
+<meta name="twitter:description" content="搜尋物件上的方法Ruby 反射機制中提供了 methods 方法，可以回傳物件上所有可以使用的方法。再配合上 Enumerable#grep 函式，能找到函式名字符合搜尋規則的項。如： User.new.methods.grep /json$/# =&amp;gt; [:include_root_in_json, :as_json, :from_json, :to_json]  這邊要注意到的一點是：me">
 
     <link rel="shortcut icon" href="/blog/imgs/wolf.ico">
     <link rel="alternate" type="application/atom+xml" title="狼" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
-        Tags｜像哈士奇的狼
+        Ruby code tracing 技巧｜像哈士奇的狼
     </title>
 
-    <link rel="canonical" href="https://khiav223577.github.io/blog/blog/tags/">
+    <link rel="canonical" href="https://khiav223577.github.io/blog/blog/2017/09/11/Ruby-code-tracing-技巧/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/blog/css/bootstrap.min.css">
@@ -57,7 +61,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top" id="nav-top" data-ispost="false" data-istags="false" data-ishome="false" data-isarchive="false">
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top" id="nav-top" data-ispost="true" data-istags="false" data-ishome="false" data-isarchive="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -171,260 +175,181 @@
 
 
 <!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="https://user-images.githubusercontent.com/4011729/30097457-55bd1d70-9310-11e7-8426-8e36ad8f6686.jpg">
+
+
 <style>
-    .intro-header .site-heading {
-        margin: 50px;
-    }
     
     header.intro-header {
         background-image: url('https://user-images.githubusercontent.com/4011729/30097457-55bd1d70-9310-11e7-8426-8e36ad8f6686.jpg')
     }
+
     
 </style>
 
-<!-- Page Header -->
 <header class="intro-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading text-center">
-                    <h1>Tags</h1>
-                    <span class="subheading"></span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>Ruby code tracing 技巧</h1>
+                    
+                    <span class="meta">
+                      <span>
+                        作者 狼
+                      </span>
+                      <span class="spliter">|</span>
+                      <span>
+                        日期 2017-09-11
+                      </span>
+                      <span class="spliter">|</span>
+                      <span id="busuanzi_container_page_pv">
+                        <i class="fa fa-eye"></i>
+                        <span id="busuanzi_value_page_pv">
+                          <i class="fa fa-spinner fa-spin"></i>
+                        </span>
+                      </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/blog/tags/#Ruby"
+                           title="Ruby">Ruby</a>
+                        
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            Ruby code tracing 技巧
+        </span>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- 标签云 -->
-            <div id='tag_cloud' class="tags">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h2 id="搜尋物件上的方法"><a href="#搜尋物件上的方法" class="headerlink" title="搜尋物件上的方法"></a>搜尋物件上的方法</h2><p>Ruby 反射機制中提供了 <code>methods</code> 方法，可以回傳物件上所有可以使用的方法。<br>再配合上 <a href="http://www.rubydoc.info/stdlib/core/Enumerable#grep-instance_method" target="_blank" rel="external">Enumerable#grep</a> 函式，能找到函式名字符合搜尋規則的項。如：</p>
+<figure class="highlight rb"><table><tr><td class="code"><pre><div class="line">User.new.methods.grep /json$/</div><div class="line"><span class="comment"># =&gt; [:include_root_in_json, :as_json, :from_json, :to_json]</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>這邊要注意到的一點是：<code>methods</code> 並不會回傳 <code>private</code> 函式，只會回傳 <code>public</code> 和 <code>protected</code> 函式。若需要更精細的搜尋時，Ruby 另外有 public_methods、protected_methods、private_methods…等可以使用。</p>
+</blockquote>
+<h3 id="搜尋實例方法"><a href="#搜尋實例方法" class="headerlink" title="搜尋實例方法"></a>搜尋實例方法</h3><p>假如想要從 <code>Class</code> 搜尋實例方法的話，則可以使用 <code>instance_methods</code>：</p>
+<figure class="highlight rb"><table><tr><td class="code"><pre><div class="line">User.instance_methods.grep /yaml/</div><div class="line"><span class="comment"># =&gt; [:to_yaml, :to_yaml_properties, :psych_to_yaml]</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>同樣地，這裡所回傳的函式也不會有 <code>private</code> 的函式。可以透過相關的函式做更進階的查找：public_instance_methods、protected_instance_methods、private_instance_methods</p>
+</blockquote>
+<h2 id="查看函式原始碼"><a href="#查看函式原始碼" class="headerlink" title="查看函式原始碼"></a>查看函式原始碼</h2><h3 id="函式物件"><a href="#函式物件" class="headerlink" title="函式物件"></a>函式物件</h3><p>在 Ruby 中，所有的東西都是物件。我們可以透過 <a href="http://www.rubydoc.info/stdlib/core/Object:method" target="_blank" rel="external">Object#method</a> 函式，把物件的函式拿出來：<br><figure class="highlight rb"><table><tr><td class="code"><pre><div class="line">User.new.method(<span class="symbol">:to_yaml</span>)</div><div class="line"><span class="comment"># =&gt; #&lt;Method: User(Object)#to_yaml(psych_to_yaml)&gt;</span></div></pre></td></tr></table></figure></p>
+<p>有了函式物件後，我們可以先稍微看一下該物件有什麼函式可以用。但是因為物件是繼承來的，繼承了非常多的函式，難以搜尋該物件真正定義的函式。此時我們可以直接將取得到函式扣掉 <code>self.methods</code> ，就能排除掉繼承來的函式了：<br><figure class="highlight rb"><table><tr><td class="code"><pre><div class="line">User.new.method(<span class="symbol">:to_json</span>).methods - methods</div><div class="line"><span class="comment"># =&gt; [:[], :to_proc, :call, :name, :receiver, :arity, :curry, :source_location, :parameters, :original_name, :owner, :unbind, :super_method] </span></div><div class="line">methods.size</div><div class="line"><span class="comment"># =&gt; 164</span></div></pre></td></tr></table></figure></p>
+<h3 id="函式定義的文件與行數"><a href="#函式定義的文件與行數" class="headerlink" title="函式定義的文件與行數"></a>函式定義的文件與行數</h3><p>有了函式物件後，我們可以透過 <a href="http://www.rubydoc.info/stdlib/core/Method:source_location" target="_blank" rel="external">Method#source_location</a> 函式，獲取函式定義所在的文件路徑以及行數。有了這項資訊我們就能找到函式的原始碼位置，做進一步的查看或修改。</p>
+<figure class="highlight rb"><table><tr><td class="code"><pre><div class="line">location = User.new.method(<span class="symbol">:to_json</span>).source_location</div><div class="line"><span class="comment"># =&gt; ["/Users/khiav223577/.rvm/gems/ruby-2.3.3/gems/activesupport-4.2.9/lib/active_support/core_ext/object/json.rb", 31] </span></div><div class="line"><span class="string">`open <span class="subst">#&#123;location[<span class="number">0</span>]&#125;</span>`</span> <span class="comment"># 開啟編輯器</span></div><div class="line"><span class="comment"># =&gt; ""</span></div></pre></td></tr></table></figure>
+<p>這邊順便分享一個無意間看到的小套件 <a href="https://github.com/daveallie/where_is" target="_blank" rel="external">where_is</a>，基本上就是把這篇文章所講的東西都包起來。</p>
+
+                <hr>
                 
-                <a href="#RMXP" title="RMXP" rel="1">RMXP</a>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/blog/2017/08/29/Mac-常用設定筆記/" data-toggle="tooltip" data-placement="top"
+                           title="Mac 常用設定筆記">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
                 
-                <a href="#RGSS" title="RGSS" rel="1">RGSS</a>
+
                 
-                <a href="#RPG Maker" title="RPG Maker" rel="1">RPG Maker</a>
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
                 
-                <a href="#Wave Effect" title="Wave Effect" rel="1">Wave Effect</a>
-                
-                <a href="#Ruby" title="Ruby" rel="1">Ruby</a>
-                
-                <a href="#Hexo" title="Hexo" rel="3">Hexo</a>
-                
-                <a href="#Algolia" title="Algolia" rel="2">Algolia</a>
-                
-                <a href="#Mac" title="Mac" rel="1">Mac</a>
+
+
+                <!--加入新的评论系统-->
                 
             </div>
 
-            <!-- 标签列表 -->
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="RMXP">
-                    <a href="RMXP" style="color: inherit;">
-                      <span class="tag-text">
-                        RMXP
-                      </span>
-                    </a>
-                </span>
-                
-                <div class="post-preview">
-                    <a href="/blog/2017/08/20/RMXP-圖片波動效果/">
-                        <h2 class="post-title">
-                            RMXP 圖片波動效果
-                        </h2>
-                        
-                    </a>
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#搜尋物件上的方法"><span class="toc-text">搜尋物件上的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#搜尋實例方法"><span class="toc-text">搜尋實例方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看函式原始碼"><span class="toc-text">查看函式原始碼</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函式物件"><span class="toc-text">函式物件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函式定義的文件與行數"><span class="toc-text">函式定義的文件與行數</span></a></li></ol></li></ol>
                 </div>
-                <hr>
-                
             </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="RGSS">
-                    <a href="RGSS" style="color: inherit;">
-                      <span class="tag-text">
-                        RGSS
-                      </span>
-                    </a>
-                </span>
-                
-                <div class="post-preview">
-                    <a href="/blog/2017/08/20/RMXP-圖片波動效果/">
-                        <h2 class="post-title">
-                            RMXP 圖片波動效果
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="RPG Maker">
-                    <a href="RPG-Maker" style="color: inherit;">
-                      <span class="tag-text">
-                        RPG Maker
-                      </span>
-                    </a>
-                </span>
-                
-                <div class="post-preview">
-                    <a href="/blog/2017/08/20/RMXP-圖片波動效果/">
-                        <h2 class="post-title">
-                            RMXP 圖片波動效果
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Wave Effect">
-                    <a href="Wave-Effect" style="color: inherit;">
-                      <span class="tag-text">
-                        Wave Effect
-                      </span>
-                    </a>
-                </span>
-                
-                <div class="post-preview">
-                    <a href="/blog/2017/08/20/RMXP-圖片波動效果/">
-                        <h2 class="post-title">
-                            RMXP 圖片波動效果
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Ruby">
-                    <a href="Ruby" style="color: inherit;">
-                      <span class="tag-text">
-                        Ruby
-                      </span>
-                    </a>
-                </span>
-                
-                <div class="post-preview">
-                    <a href="/blog/2017/09/11/Ruby-code-tracing-技巧/">
-                        <h2 class="post-title">
-                            Ruby code tracing 技巧
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Hexo">
-                    <a href="Hexo" style="color: inherit;">
-                      <span class="tag-text">
-                        Hexo
-                      </span>
-                    </a>
-                </span>
-                
-                <div class="post-preview">
-                    <a href="/blog/2017/08/15/hexo-上實現搜尋功能（上）/">
-                        <h2 class="post-title">
-                            hexo 上實現搜尋功能（上）
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-                <div class="post-preview">
-                    <a href="/blog/2017/08/18/hexo-上實現搜尋功能（下）/">
-                        <h2 class="post-title">
-                            hexo 上實現搜尋功能（下）
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-                <div class="post-preview">
-                    <a href="/blog/2017/08/13/在-hexo-上踩過的雷/">
-                        <h2 class="post-title">
-                            在 hexo 上踩過的雷
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Algolia">
-                    <a href="Algolia" style="color: inherit;">
-                      <span class="tag-text">
-                        Algolia
-                      </span>
-                    </a>
-                </span>
-                
-                <div class="post-preview">
-                    <a href="/blog/2017/08/15/hexo-上實現搜尋功能（上）/">
-                        <h2 class="post-title">
-                            hexo 上實現搜尋功能（上）
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-                <div class="post-preview">
-                    <a href="/blog/2017/08/18/hexo-上實現搜尋功能（下）/">
-                        <h2 class="post-title">
-                            hexo 上實現搜尋功能（下）
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Mac">
-                    <a href="Mac" style="color: inherit;">
-                      <span class="tag-text">
-                        Mac
-                      </span>
-                    </a>
-                </span>
-                
-                <div class="post-preview">
-                    <a href="/blog/2017/08/29/Mac-常用設定筆記/">
-                        <h2 class="post-title">
-                            Mac 常用設定筆記
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-            </div>
-            
-
         </div>
     </div>
-</div>
+</article>
+
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "khiav-blog-1";
+    var disqus_identifier = "https://khiav223577.github.io/blog/2017/09/11/Ruby-code-tracing-技巧/";
+    var disqus_url = "https://khiav223577.github.io/blog/2017/09/11/Ruby-code-tracing-技巧/";
+
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+                o = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) {
+            o.addEventListener('load', function (e) {
+                c(null, e);
+            }, false);
+        }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function () {
+        anchors.options = {
+            visible: 'always',
+            placement: 'right',
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link {
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top: -0.1em;
+        }
+    }
+</style>
+
+
+
 
 <!-- Footer -->
 <!-- Footer -->
