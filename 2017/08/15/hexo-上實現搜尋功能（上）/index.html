@@ -20,7 +20,7 @@
 <meta name="keywords" content="Hexo,Algolia">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo 上實現搜尋功能（上）｜像哈士奇的狼">
-<meta property="og:url" content="https://khiav223577.github.io/2017/08/15/hexo-上實現搜尋功能（上）/index.html">
+<meta property="og:url" content="https://khiav223577.github.io/blog/2017/08/15/hexo-上實現搜尋功能（上）/index.html">
 <meta property="og:site_name" content="狼">
 <meta property="og:description" content="前言hexo 原生是沒有搜尋功能的，但有些主題會提供搜尋功能，主要分成二種。一種是裝 npm 套件，在打包時先生成索引檔（可能是 JSON, XML 格式），再引入 js 檔自行實作搜尋的功能。另一種則是依賴外部服務，例如Swiftype、Algolia、Azure。在搜尋時發送請求給外部服務，由外部服務回傳搜尋結果。在這裡就不討論好壞了，直接說明我怎麼實現的吧XD Swiftype這個是我使用的">
 <meta property="og:image" content="https://user-images.githubusercontent.com/4011729/29283635-27d45c4c-815a-11e7-9416-281db6c5b2f0.png">
@@ -40,7 +40,7 @@
         hexo 上實現搜尋功能（上）｜像哈士奇的狼
     </title>
 
-    <link rel="canonical" href="https://khiav223577.github.io/blog/2017/08/15/hexo-上實現搜尋功能（上）/">
+    <link rel="canonical" href="https://khiav223577.github.io/blog/blog/2017/08/15/hexo-上實現搜尋功能（上）/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/blog/css/bootstrap.min.css">
@@ -308,8 +308,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "khiav-blog-1";
-    var disqus_identifier = "https://khiav223577.github.io/2017/08/15/hexo-上實現搜尋功能（上）/";
-    var disqus_url = "https://khiav223577.github.io/2017/08/15/hexo-上實現搜尋功能（上）/";
+    var disqus_identifier = "https://khiav223577.github.io/blog/2017/08/15/hexo-上實現搜尋功能（上）/";
+    var disqus_url = "https://khiav223577.github.io/blog/2017/08/15/hexo-上實現搜尋功能（上）/";
 
     (function () {
         var dsq = document.createElement('script');
@@ -478,7 +478,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("https://khiav223577.github.io/blog/js/jquery.tagcloud.js",function(){
+        async("https://khiav223577.github.io/blog/blog/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
