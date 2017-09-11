@@ -13,7 +13,7 @@ SEOTitle: 像哈士奇的狼
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://khiav223577.github.io/blog
+url: https://khiav223577.github.io
 root: /blog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -89,20 +89,18 @@ deploy:
 ga_track_id: 'UA-89612344-1'            # Format: UA-xxxxxx-xx
 ga_domain: auto
 
-favicon: https://khiav223577.github.io/blog/imgs/wolf.ico
+favicon: /blog/imgs/wolf.ico
 
 post-default-img: https://user-images.githubusercontent.com/4011729/30097457-55bd1d70-9310-11e7-8426-8e36ad8f6686.jpg
 post-default-img-mobile: https://user-images.githubusercontent.com/4011729/30097457-55bd1d70-9310-11e7-8426-8e36ad8f6686.jpg
-# 註：因為 og:image 的關係，要用絕對路徑
-header-img: https://khiav223577.github.io/blog/imgs/water-blue.jpg
+header-img: /blog/imgs/water-blue.jpg
 
 # --------------------------------------------
 # Sidebar settings
 # --------------------------------------------
 
 sidebar-about-description: 不想變得普通，卻又害怕不同 # 個人描述
-# 註：因為 og:image 的關係，要用絕對路徑
-sidebar-avatar: https://khiav223577.github.io/blog/imgs/wolf.jpg    # use absolute URL
+sidebar-avatar: /blog/imgs/wolf.jpg    # use absolute URL
 
 # SNS settings
 # RSS:
