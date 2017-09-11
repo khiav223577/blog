@@ -2,7 +2,7 @@
 title: Ruby code tracing 技巧
 date: 2017-09-11 01:23:57
 tags: Ruby
-header-img: /blog/imgs/debuff_ruby_code.png
+header-img: /blog/imgs/echo_debuff_example.png
 ---
 
 ## 搜尋物件上的方法
