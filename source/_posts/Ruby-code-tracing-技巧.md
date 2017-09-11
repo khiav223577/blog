@@ -7,7 +7,7 @@ tags: Ruby
 ## 搜尋物件上的方法
 
 Ruby 反射機制中提供了 `methods` 方法，可以回傳物件上所有可以使用的方法。
-再配合上 `grep` 函式，能找到函式名字符合搜尋規則的項。如：
+再配合上 [Enumerable#grep](http://www.rubydoc.info/stdlib/core/Enumerable#grep-instance_method) 函式，能找到函式名字符合搜尋規則的項。如：
 
 ```rb
 User.new.methods.grep /json$/
@@ -29,14 +29,29 @@ User.instance_methods.grep /yaml/
 ## 查看函式原始碼
 ### 函式物件
 
-在 Ruby 中，所有的東西都是物件。剛剛我們可以透過 `method` 函式，把一個物件的函式拿出來。如：
+在 Ruby 中，所有的東西都是物件。我們可以透過 [Object#method](http://www.rubydoc.info/stdlib/core/Object:method) 函式，把物件的函式拿出來：
 ```rb
 User.new.method(:to_yaml)
 # => #<Method: User(Object)#to_yaml(psych_to_yaml)> 
 ```
 
-有了函式物件後，我們可以先稍微看一下該物件有什麼函式可以用。
+有了函式物件後，我們可以先稍微看一下該物件有什麼函式可以用。但是因為物件是繼承來的，繼承了非常多的函式，難以搜尋該物件真正定義的函式。此時我們可以直接將取得到函式扣掉 `self.methods` ，就能排除掉繼承來的函式了：
 ```rb
-User.new.method(:to_json).methods - methods - ->{}.methods
-# => [:name, :receiver, :original_name, :owner, :unbind, :super_method] 
+User.new.method(:to_json).methods - methods
+# => [:[], :to_proc, :call, :name, :receiver, :arity, :curry, :source_location, :parameters, :original_name, :owner, :unbind, :super_method] 
+methods.size
+# => 164
 ```
+
+### 函式定義的文件與行數
+
+有了函式物件後，我們可以透過 [Method#source_location](http://www.rubydoc.info/stdlib/core/Method:source_location) 函式，獲取函式定義所在的文件路徑以及行數。有了這項資訊我們就能找到函式的原始碼位置，做進一步的查看或修改。
+
+```rb
+location = User.new.method(:to_json).source_location
+# => ["/Users/khiav223577/.rvm/gems/ruby-2.3.3/gems/activesupport-4.2.9/lib/active_support/core_ext/object/json.rb", 31] 
+`open #{location[0]}` # 開啟編輯器
+# => ""
+```
+
+這邊順便分享一個無意間看到的小套件 [where_is](https://github.com/daveallie/where_is)，基本上就是把這篇文章所講的東西都包起來。
