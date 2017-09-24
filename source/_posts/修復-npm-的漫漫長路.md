@@ -2,6 +2,7 @@
 title: 修復 npm 的漫漫長路
 date: 2017-09-24 17:05:51
 tags: npm
+header-img: /blog/imgs/npm_update_check_failed.png
 ---
 
 不知道為什麼，裝了幾個套件後 `npm` 就掛了。只好開始修復 `npm` 的漫漫長路...
