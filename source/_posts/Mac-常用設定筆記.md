@@ -52,10 +52,10 @@ defaults write com.apple.finder AppleShowAllFiles FALSE;\killall Finder
 ### Library 資料夾
 ```
 # 顯示 Library 資料夾
-chflags hidden ~/Library
+chflags nohidden ~/Library
 
 # 隱藏 Library 資料夾
-chflags nohidden ~/Library
+chflags hidden ~/Library
 ```
 
 <!-- ------------------------------ -->
