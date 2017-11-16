@@ -13,7 +13,7 @@ hexo 原生是沒有搜尋功能的，但有些主題會提供搜尋功能，主
 ```yml
 swiftype_key: your_application_key
 ```
-假如以前沒有用過 [Swiftype](https://swiftype.com/) 的話，要先去註冊一個帳號（PS：限制只能用公司 Email，不能用 Gmail）
+假如以前沒有用過 [Swiftype](https://swiftype.com/) 的話，要先去註冊一個帳號（只能用公司 Email，不能用 Gmail）
 註冊完會有 14 天的 `Free Trial`，但它沒有免費方案，而且超貴，最便宜的也要 `299/mo`（美金！？）。不過[聽說](http://www.jerryfu.net/post/search-engine-for-hexo-with-swiftype-v2.html)免費試用到了後，會給你一個選擇降級成免費帳號（？）
 
 註冊完之後，點選 `Create Engine`，綁上部落格的網址後，它的爬蟲就會來你的網站爬資料、建立索引。只不過爬的速度有點慢，等了一整天還沒爬完，一直停留在 `Crawling` 步驟，如下圖：
