@@ -6,6 +6,7 @@ tags:
   - RGSS
   - RPG Maker
   - Wave Effect
+  - Echo
 ---
 <a href="/blog/RM/rmxp_wave_effect.rb" target="_blank">下載腳本</a>
 <a href="/blog/RM/rmxp_wave_effect.rar" target="_blank">下載 DEMO 範例專案</a>
