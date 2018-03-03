@@ -1,5 +1,6 @@
 ---
-title: Rails 中常搞混的時區問題 Time.now vs. Time.current
+title: Rails 中常搞混的時區問題
+subtitle: Time.now vs. Time.current
 date: 2018-03-03 13:00:02
 tags:
   - Rails
