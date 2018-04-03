@@ -39,7 +39,8 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
+  script: https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js
   line_number: false
   auto_detect: false
   tab_replace:
