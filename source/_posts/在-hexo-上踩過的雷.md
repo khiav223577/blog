@@ -32,7 +32,7 @@ tags:
 ## 無法 git push，一直叫你要 pull
 發生原因不明。不知道為什麼在 `master` branch 上 pull 到的是 `gh-pages` branch 的資料。
 解決方法，在終端機輸入：
-```js
+```
 git branch --set-upstream-to=origin/master
 ```
 
