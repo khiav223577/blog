@@ -1,5 +1,5 @@
 ---
-title: 如何解決 mac 與 windows 之間 CSV 亂碼問題
+title: 解決 mac 與 windows 之間 CSV 亂碼問題
 date: 2018-07-11 14:46:00
 tags:
   - mac
