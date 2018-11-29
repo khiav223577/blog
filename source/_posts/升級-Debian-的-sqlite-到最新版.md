@@ -44,7 +44,7 @@ brew list sqlite
 /home/linuxbrew/.linuxbrew/Cellar/sqlite/3.25.2/share/man/man1/sqlite3.1
 ```
 
-因為用 brew 裝的 sqlite 不是在系統預設的路徑 `/usr/bin/` 內，所以我們在裝 ruby 的 sqlite bindings ([sqlite3-ruby](https://github.com/sparklemotion/sqlite3-ruby)) 時要特別指定路徑，它才找得到
+因為用 brew 裝的 sqlite 不是在系統預設的路徑 `/usr/lib/`, `/usr/include/` 內，所以我們在裝 ruby 的 sqlite bindings ([sqlite3-ruby](https://github.com/sparklemotion/sqlite3-ruby)) 時要特別指定路徑，它才找得到
 > If you have sqlite3 installed in a non-standard location, you can specify the location of the include and lib files by doing:
 ```
 gem install sqlite3 -- --with-sqlite3-include=/opt/local/include \
