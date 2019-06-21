@@ -54,7 +54,7 @@ gem install therubyracer -v '0.12.3'
 
 ## 錯誤訊息
 
-若先裝最新版 libv8 時會噴的錯誤訊息：
+附註一下，若先裝最新版 libv8 時會噴的錯誤訊息：
 
 ```
 $ gem install therubyracer
