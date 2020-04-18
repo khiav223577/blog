@@ -175,7 +175,7 @@ resource 'Users' do # Note 2
         expect(status).to eq 200
 
         response = JSON.parse(response_body)
-        expect(response_data).to eq('access_token' => 'abcdef')
+        expect(response).to eq('access_token' => 'abcdef')
       end
     end
   end
