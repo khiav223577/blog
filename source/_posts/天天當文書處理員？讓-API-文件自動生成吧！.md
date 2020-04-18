@@ -211,4 +211,4 @@ aglio -i docs/index.apib -o docs/index.html --theme-template triple --theme-styl
 完成了文件自動生成，接下來就是將文件給需要的人看啦。最簡單的方式就是將 docs 資料夾內的 index.html 傳給對方；或是不怕文件被看的話，可以設定在 Github Pages 上，讓 Github 幫你雲端自動託管。好處是可以不用每次文件更新都要再傳一次，只要連入網址就能立刻看到最新版的文件。Github Pages 設定方法很簡單，點入專案的 Repository > Settings 內設定就可以了，如圖：
 ![setup_github_pages](/blog/imgs/api_doc_example/setup_github_pages.png)
 
-這次的教學就到這裡了，希望這篇文章能幫助到常常有寫文件需求的人。讓我們能夠專注於寫程式當中，不被雜事佔據。
+這次的教學就到這裡了，希望這篇文章能幫助到常常有寫文件需求的人。讓我們能夠專注於寫程式當中，不被雜事佔據～
