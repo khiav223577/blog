@@ -116,9 +116,9 @@ require 'support/rspec_api_documentation'
 後面接的參數為 API 名字。
 
 #### 6. parameter
-定義這個 API 需要傳什麼參數。可以像 let 一樣隨意放在各層中去設定。
+定義這個 API 需要傳什麼參數。可以像 let 一樣隨意放在各層中去設定。也可以加一些描述的設定，如可以說明這個參數是必要的： `required: true`。詳細的設定說明可以參考該 gem 的 Github 頁面。
 
-定義完參數後，測試可以用 let 去設定這個 example 要傳的參數的值。`with_example` 和 `required` 都是給文件的設定，詳細的參數說明可以參考 gem 的 Github 頁面。
+定義完參數後，測試可以用 let 去設定這個測試要傳的參數的值。
 
 #### 7. context, it
 `context` 命名不影響文件，只是給測試顯示用的情境名稱。
@@ -140,8 +140,8 @@ resource 'Users' do # Note 2
 
   route '/users/sign_in', 'Sign In' do # Note 4
     post '登入' do # Note 5
-      parameter :email, with_example: true, required: true # Note 6
-      parameter :password, with_example: true, required: true # Note 6
+      parameter :email, required: true # Note 6
+      parameter :password, required: true # Note 6
 
       let(:email){ 'vin@example.com' }
       let(:password){ 'abcd1234' }
