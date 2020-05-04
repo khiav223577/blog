@@ -25,8 +25,8 @@ Time.now
 Time.current
 # => Fri, 02 Mar 2018 18:25:00 UTC +00:00
 
-Time.now == Time.current 
-# => true 
+Time.now == Time.current
+# => true
 ```
 
 二者代表的時間是一樣的，差別在於時區可能不一樣
@@ -43,13 +43,13 @@ Time.now == Time.current
 如以下程式碼：
 ```rb
 Time.now.to_date
-# => Fri, 02 Mar 2018 
+# => Fri, 02 Mar 2018
 
 Time.current.to_date
 # => Sat, 03 Mar 2018
 
 Time.now.to_date == Time.current.to_date
-# => false 
+# => false
 ```
 
 因此在日期的計算時，會需要額外指定是哪個時區底下的日期。
@@ -76,6 +76,7 @@ Time.parse('2018-03-03 02:25:00').to_date
 # 今天
 Time.current.to_date
 Time.zone.now
+Time.zone.today
 Date.current
 
 # 昨天
@@ -116,10 +117,10 @@ Date.today == Date.yesterday + 2.day
 # => true
 
 Date.today
-# => Sat, 03 Mar 2018 
+# => Sat, 03 Mar 2018
 
 Date.yesterday
-# => Thu, 01 Mar 2018 
+# => Thu, 01 Mar 2018
 ```
 
 
