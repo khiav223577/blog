@@ -135,9 +135,9 @@ friends:
 # swiftype_key: AeQzrVS58KwTaGUqXGwY
 
 algolia:
-  appId: "XDG1C6ASA4"
-  apiKey: "eebdd0f1174b77269d954813961815bc"
-  adminApiKey: "3bf0fe8506a00c5758fc627ebd378f69"
+  appId: "MZWDU7APU1"
+  apiKey: "56b336245024b26e2b463b8cbd09cf07"
+  adminApiKey: "3cff86bce062b01599a8dc1970d9d2ac"
   chunkSize: 5000
   indexName: "khiav-hexo-blog"
   fields:
