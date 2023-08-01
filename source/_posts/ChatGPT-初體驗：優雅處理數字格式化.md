@@ -8,7 +8,7 @@ tags:
   - ChatGPT
 ---
 
-在網頁開發中，我們經常需要處理數字的格式化，例如將小數四捨五入到指定精準度、添加千位分隔符...等等。對於使用 Ruby on Rails 框架的開發者來說，[number_with_precision](https://apidock.com/rails/v6.1.3.1/ActionView/Helpers/NumberHelper/number_with_precision) 函式是個方便實用的工具。但是，如果我們在 JavaScript 環境中工作，我們需要自己實現這樣的功能。
+在網頁開發中，我們經常需要處理數字的格式化，例如將小數四捨五入到指定精準度、添加千位分隔符...等等。對於使用 Ruby on Rails 框架的開發者來說，number_with_precision 函式是個方便實用的工具。但是，如果我們在 JavaScript 環境中工作，我們需要自己實現這樣的功能。
 
 
 ## 前情提要
