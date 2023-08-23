@@ -89,7 +89,7 @@ deploy:
   branch: gh-pages
   #extend_dirs: blog
 
-ga_track_id: 'UA-89612344-1'            # Format: UA-xxxxxx-xx
+ga_track_id: 'G-LERHN3QS29'            # Format: G-xxxxxx
 ga_domain: auto
 
 favicon: /blog/imgs/wolf.ico
