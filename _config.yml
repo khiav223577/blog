@@ -121,14 +121,12 @@ featured-condition-size: 1
 
 # 友情連結
 friends:
-  - href: http://echo2010.weebly.com/
-    title: 回音
-  - href: https://www.pagamo.org/
+  - href: https://store.steampowered.com/app/751320
+    title: 回音 steam
+  - href: https://www.pagamo.org
     title: PaGamO
-  - href: https://www.pneko.com/
-    title: Pneko
-  - href: https://mobile-price.github.io/
-    title: 手機即時查價
+  - href: https://max.maicoin.com/signup?r=92d039f1
+    title: MAX 交易所
 
 # --------------------------------------------
 # Search
