@@ -2,6 +2,8 @@
 title: Rails-進階小技巧（三）
 subtitle: pluck 純數字
 date: 2018-09-26 08:47:27
+categories:
+  - 程式開發
 tags:
   - Rails
 ---

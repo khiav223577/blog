@@ -1,6 +1,8 @@
 ---
 title: 手機購買心理大揭密：為何蘋果永不貶值？三星CP值魅力炸裂！
 date: 2023-08-06 15:20:47
+categories:
+  - 雜談
 tags:
   - ChatGPT
 ---

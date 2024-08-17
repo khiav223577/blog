@@ -1,6 +1,8 @@
 ---
 title: 【Rails Bug 分析】model 儲存時會額外下 query 重新載入關聯
 date: 2018-08-12 17:37:25
+categories:
+  - 程式開發
 tags:
   - Rails
   - active_model

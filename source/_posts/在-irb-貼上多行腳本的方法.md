@@ -1,6 +1,8 @@
 ---
 title: 在 irb 貼上多行腳本的方法
 date: 2018-06-09 14:17:31
+categories:
+  - 程式開發
 tags:
   - Ruby
   - irb

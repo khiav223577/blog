@@ -1,6 +1,8 @@
 ---
 title: 升級 Debian 的 sqlite 到最新版
 date: 2018-11-30 01:12:42
+categories:
+  - 程式開發
 tags:
  - Debian
  - SQLite

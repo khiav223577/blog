@@ -1,6 +1,8 @@
 ---
 title: Vue 中使用 debounce 防止前端瘋狂發送請求
 date: 2018-04-09 18:04:46
+categories:
+  - 程式開發
 tags:
   - Javascript
   - vue

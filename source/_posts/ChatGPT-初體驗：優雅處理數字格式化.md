@@ -2,6 +2,8 @@
 title: ChatGPT 初體驗：優雅處理數字格式化
 subtitle: 構建自己的 JavaScript 版 Rails number_with_precision 函式
 date: 2023-08-01 19:45:50
+categories:
+  - 程式開發
 tags:
   - Ruby
   - Javascript

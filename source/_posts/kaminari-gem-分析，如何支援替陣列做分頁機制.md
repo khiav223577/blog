@@ -2,6 +2,7 @@
 title: kaminari gem 分析，如何支援替陣列做分頁機制
 date: 2024-08-17 16:18:51
 categories:
+  - 程式開發
 tags:
   - Rails
   - Ruby

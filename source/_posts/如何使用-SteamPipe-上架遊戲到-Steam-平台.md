@@ -1,6 +1,8 @@
 ---
 title: 如何使用 SteamPipe 上架遊戲到 Steam 平台
 date: 2018-01-20 15:08:30
+categories:
+  - 遊戲開發
 tags: 
   - Steam
   - Echo

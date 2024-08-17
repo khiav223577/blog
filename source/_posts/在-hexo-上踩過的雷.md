@@ -1,6 +1,7 @@
 ---
 title: 在 hexo 上踩過的雷
 date: 2017-08-13 15:25:35
+categories:
 tags:
   - Hexo
 ---

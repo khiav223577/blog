@@ -1,6 +1,8 @@
 ---
 title: hexo 上實現搜尋功能（下）
 date: 2017-08-18 15:50:12
+categories:
+  - 程式開發
 tags:
   - Hexo
   - Algolia

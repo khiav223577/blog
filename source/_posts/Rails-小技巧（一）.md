@@ -2,6 +2,8 @@
 title: Rails 進階小技巧（一）
 subtitle: 在 one-to-one relation 上使用 update_all
 date: 2018-04-19 18:54:25
+categories:
+  - 程式開發
 tags:
   - Rails
   - active_model

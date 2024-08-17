@@ -2,6 +2,7 @@
 title: MySQL 編碼挑選與差異比較
 subtitle: utf8_bin vs. utf8_unicode_ci  vs. utf8_general_ci
 date: 2019-06-30 22:38:25
+categories:
 tags: MySQL
 ---
 

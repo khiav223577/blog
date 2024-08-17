@@ -1,6 +1,8 @@
 ---
 title: therubyracer 和 libv8 的安裝問題
 date: 2018-12-20 21:05:58
+categories:
+  - 程式開發
 tags: gem
 ---
 

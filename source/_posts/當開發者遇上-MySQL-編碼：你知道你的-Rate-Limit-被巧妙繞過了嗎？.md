@@ -1,6 +1,8 @@
 ---
 title: 當開發者遇上 MySQL 編碼：你知道你的 Rate Limit 被巧妙繞過了嗎？
 date: 2024-05-18 15:56:02
+categories:
+  - 程式開發
 tags:
   - MySQL
   - Security

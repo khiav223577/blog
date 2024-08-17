@@ -1,6 +1,8 @@
 ---
 title: Ruby code tracing 技巧
 date: 2017-09-11 01:23:57
+categories:
+  - 程式開發
 tags: Ruby
 header-img: /blog/imgs/echo_debuff_example.png
 ---

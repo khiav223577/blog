@@ -1,6 +1,8 @@
 ---
 title: Ruby 快速實作客戶 PHP 加解密函式
 date: 2023-12-03 23:05:48
+categories:
+  - 程式開發
 tags:
   - Ruby
   - PHP

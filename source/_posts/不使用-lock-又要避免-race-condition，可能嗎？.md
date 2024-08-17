@@ -1,6 +1,8 @@
 ---
 title: 不使用 lock 又要避免 race condition，可能嗎？
 date: 2019-02-07 15:01:32
+categories:
+  - 程式開發
 tags:
   - Rails
   - race condition

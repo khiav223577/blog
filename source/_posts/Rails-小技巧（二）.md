@@ -2,6 +2,8 @@
 title: Rails 進階小技巧（二）
 subtitle: joins 時使用其它 Model 的 scope 函式
 date: 2018-05-19 14:20:13
+categories:
+  - 程式開發
 tags:
   - Rails
   - active_model
