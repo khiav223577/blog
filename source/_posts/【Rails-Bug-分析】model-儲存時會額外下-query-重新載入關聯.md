@@ -5,7 +5,7 @@ categories:
   - 程式開發
 tags:
   - Rails
-  - active_model
+  - ActiveRecord
 ---
 
 ## BUG 觸發條件

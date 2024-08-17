@@ -6,7 +6,7 @@ categories:
   - 程式開發
 tags:
   - Rails
-  - active_model
+  - ActiveRecord
 ---
 
 ## 一對一關聯會直接載入 model

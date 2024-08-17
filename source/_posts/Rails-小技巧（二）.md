@@ -6,7 +6,7 @@ categories:
   - 程式開發
 tags:
   - Rails
-  - active_model
+  - ActiveRecord
 ---
 
 假如我們有 user model 如下：

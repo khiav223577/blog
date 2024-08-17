@@ -4,8 +4,8 @@ date: 2018-07-11 14:46:00
 categories:
   - 程式開發
 tags:
-  - mac
-  - windows
+  - macOS
+  - Windows
   - 編碼
 ---
 
