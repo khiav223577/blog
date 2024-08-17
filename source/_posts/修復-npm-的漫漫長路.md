@@ -2,7 +2,7 @@
 title: 修復 npm 的漫漫長路
 date: 2017-09-24 17:05:51
 categories:
-  - 程式開發
+  - 環境設定
 tags: npm
 header-img: /blog/imgs/npm_update_check_failed.png
 ---
