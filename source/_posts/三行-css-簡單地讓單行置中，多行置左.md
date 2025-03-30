@@ -9,7 +9,7 @@ tags:
 
 有一天 PM 突然表示，我們遊戲介面中平常文字都是置中的，畫面看起來很協調。但是如果文字太長換行了，這時候多行都一起置中，有些行長，有些行短，看起來就會參差不齊。因此想要做一個效果是：「超過一行的話，文字就要改成置左」。效果大概如下圖：
 
-![align center image](/blog/imgs/pagamo/align_center.png)![align left image](/blog/imgs/pagamo/align_left.png)
+![align center image](/imgs/pagamo/align_center.png)![align left image](/imgs/pagamo/align_left.png)
 
 那時候心裡一驚，不太妙，感覺會很複雜，可能得要用 javascript 去動態計算文字寬度，再動態去調整 css 要置中還是要置左。
 
@@ -57,7 +57,7 @@ pre {
 ### 單行時
 
 如下圖，紅色框是外層 `<div>`，內層藍色框是 `display: inline-block` 的元素。因為內層沒有指定寬度，所以寬度為文字的寬度。而外層設定了文字置中，而將內層藍色框置中了。
-![align center image explanation](/blog/imgs/pagamo/align_center-explanation.png)
+![align center image explanation](/imgs/pagamo/align_center-explanation.png)
 
 ### 多行時
 
@@ -65,4 +65,4 @@ pre {
 
 內層藍色框中，因為文字太長而被迫換行。原本單行時，文字在內層裡置中、置左都沒差。但多行時，內層設定的文字置左就發揮功能了，讓多行中的最後一行貼齊最左側。如下圖所示：
 
-![align left image explanation](/blog/imgs/pagamo/align_left-explanation.png)
+![align left image explanation](/imgs/pagamo/align_left-explanation.png)

@@ -107,7 +107,7 @@ js 內也已經幫你修好一些 BUG，並加上 `debounce` ，避免每打一�
 ### 5. 加上 Algolia Logo
 
 輸入 `cd ../../` 回到 blog 路徑，下載下面這張圖片，放到 `source/imgs/` 內
-![algolia_logo](/blog/imgs/algolia_logo.svg)
+![algolia_logo](/imgs/algolia_logo.svg)
 
 ### 6. 完成！
 

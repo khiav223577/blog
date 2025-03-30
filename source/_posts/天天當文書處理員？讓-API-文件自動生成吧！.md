@@ -37,7 +37,7 @@ Rails 有很多自動生成 API 文件的套件。有些需要改動 Controller 
 2. 一年多沒有發新版了
 
 最後產出來的文件大概長這樣：（也可以看看一下 [aglio 提供的範例](https://htmlpreview.github.io/?https://raw.githubusercontent.com/danielgtaylor/aglio/blob/master/examples/default-triple.html)）
-![api_doc_example_whole](/blog/imgs/api_doc_example/api_doc_example_whole.png)
+![api_doc_example_whole](/imgs/api_doc_example/api_doc_example_whole.png)
 
 ## 設定
 
@@ -187,9 +187,9 @@ end
 
 #### 測試如何對應文件
 
-以下是我整理的，可以參考一下，測試中設定的東西最後會怎麼去影響到文件的生成：![parameter_to_docs_explanation](/blog/imgs/api_doc_example/parameter_to_docs_explanation.png)
+以下是我整理的，可以參考一下，測試中設定的東西最後會怎麼去影響到文件的生成：![parameter_to_docs_explanation](/imgs/api_doc_example/parameter_to_docs_explanation.png)
 
-右上角 **example 的名字** （成功、信箱錯誤、密碼錯誤）那個按鈕是可以點的，點了可以切換看不同的情況的 request 以及 response。因為太長很難一次截完，上圖中有截到 Request 的樣子了，這裡再補個 Response 大概會長的樣子的圖：![response_example](/blog/imgs/api_doc_example/response_example.png)
+右上角 **example 的名字** （成功、信箱錯誤、密碼錯誤）那個按鈕是可以點的，點了可以切換看不同的情況的 request 以及 response。因為太長很難一次截完，上圖中有截到 Request 的樣子了，這裡再補個 Response 大概會長的樣子的圖：![response_example](/imgs/api_doc_example/response_example.png)
 
 ## 自動生成文件
 
@@ -212,6 +212,6 @@ aglio -i docs/index.apib -o docs/index.html --theme-template triple --theme-styl
 ## 分享 API 文件
 
 完成了文件自動生成，接下來就是將文件給需要的人看啦。最簡單的方式就是將 docs 資料夾內的 index.html 傳給對方；或是不怕文件被看的話，可以設定在 Github Pages 上，讓 Github 幫你雲端自動託管。好處是可以不用每次文件更新都要再傳一次，只要連入網址就能立刻看到最新版的文件。Github Pages 設定方法很簡單，點入專案的 Repository > Settings 內設定就可以了，如圖：
-![setup_github_pages](/blog/imgs/api_doc_example/setup_github_pages.png)
+![setup_github_pages](/imgs/api_doc_example/setup_github_pages.png)
 
 這次的教學就到這裡了，希望這篇文章能幫助到常常有寫文件需求的人。讓我們能夠專注於寫程式當中，不被雜事佔據～
