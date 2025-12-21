@@ -89,7 +89,7 @@ p app.reloaders.map{|s| s.class.name }
 然後再搭配以下流程就會觸發 bug：
 - test case 在打 API 時，reloader 會去判斷需不需要重載 class。
 - 但此時我們若有用 Timecop.freeze 或是 travel_to 函式去控制時間的話，Time.now 的時間可能是過去的時間。
-- 而因為 ActiveSupport::FileUpdateChecker 在抓 `max_mtime` 時，會去 ignore 檔案 mtime 在未來的那些檔案。（可能是認為這邊檔案時間竟然在未來，太怪了所以 ignore (?)）
+- 而因為 ActiveSupport::FileUpdateChecker 在抓 `max_mtime` 時，會去 ignore 檔案 mtime 在未來的那些檔案。（可能是認為這檔案時間竟然在未來，太怪了所以 ignore (?)）
 ```rb
 def max_mtime(paths)
   time_now = Time.now
