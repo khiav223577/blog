@@ -171,6 +171,10 @@ markdown:
     # - markdown-it-sup
     - markdown-it-emoji
 
+# hexo-renderer-marked
+marked:
+  smartypants: false
+
 # --------------------------------------------
 # CDN
 # --------------------------------------------
