@@ -49,7 +49,7 @@ ActiveRecord::AssociationTypeMismatch:
 Rails.autoloaders.each do |loader|
   loader.on_unload do |*args|
     if $debug
-      p “------ Rails.autoloaders on_unload: #{args} -------”
+      p "------ Rails.autoloaders on_unload: #{args} -------"
       caller.each{|s| p s }
       exit
     end
@@ -79,7 +79,7 @@ p app.reloaders.map(&:updated?)
 # => [false, true, false, false, false]
 
 p app.reloaders.map{|s| s.class.name }
-# => [“ActiveSupport::FileUpdateChecker”, “ActionView::CacheExpiry::ViewReloader”, “ActiveSupport::FileUpdateChecker”, “Rails::Application::RoutesReloader”, “ActiveSupport::FileUpdateChecker”]
+# => ["ActiveSupport::FileUpdateChecker”, "ActionView::CacheExpiry::ViewReloader”, "ActiveSupport::FileUpdateChecker”, "Rails::Application::RoutesReloader”, "ActiveSupport::FileUpdateChecker”]
 ```
 
 ## random test failures 原因
