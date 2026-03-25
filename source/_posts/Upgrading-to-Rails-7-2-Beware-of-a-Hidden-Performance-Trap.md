@@ -6,6 +6,7 @@ categories:
   - 程式開發
 tags:
   - Rails
+header-img: /blog/imgs/header_img/ruby-YJIT.jpg
 ---
 
 最近專案升上 Rails 7.2 後，發現不但測試速度變慢、local 開發時，改 code 之後新的 request 進來，rails server 都要等近一分鐘才有反應。中間想要關閉 server 還會完全沒有反應，要直接關閉 terminal 或下 kill -9 指令強制關閉。

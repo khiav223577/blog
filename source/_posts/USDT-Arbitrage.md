@@ -6,6 +6,7 @@ categories:
   - 理財
 tags:
   - 搬磚套利
+header-img: /blog/imgs/header_img/usdt_arbitrage.jpg
 ---
 
 ## 三角套匯

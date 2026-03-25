@@ -6,6 +6,7 @@ categories:
 tags:
   - Javascript
   - Chrome Extension
+header-img: /blog/imgs/header_img/1password.jpg
 ---
 
 最近意外發現我 blog 的文章中，程式碼的 highlight 在 macbook chrome 上顯示異常，除了沒有標色以外，多行的 code block 也變成很長的單行。如下圖：
