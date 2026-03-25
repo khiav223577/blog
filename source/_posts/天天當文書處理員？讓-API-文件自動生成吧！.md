@@ -2,7 +2,7 @@
 title: 天天當文書處理員？讓 API 文件自動生成吧！
 subtitle: 利用 RSpec 測試自動生成 API 文件
 date: 2020-04-12 05:21:14
-header-img: /blog/imgs/api_doc_example/header.jpg
+header-img: /blog/imgs/header_img/api_doc_example.jpg
 categories:
   - 程式開發
 tags:

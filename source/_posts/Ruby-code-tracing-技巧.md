@@ -4,7 +4,7 @@ date: 2017-09-11 01:23:57
 categories:
   - 程式開發
 tags: Ruby
-header-img: /blog/imgs/echo_debuff_example.png
+header-img: /blog/imgs/header_img/echo_debuff_example.png
 ---
 
 ## 搜尋物件上的方法
